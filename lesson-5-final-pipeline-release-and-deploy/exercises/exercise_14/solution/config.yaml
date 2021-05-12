@@ -1,0 +1,67 @@
+main:
+  project_name: exercise_14
+  experiment_name: dev
+  execute_steps:
+    - download
+    - preprocess
+    - check_data
+    - segregate
+    - random_forest
+    - evaluate
+  # This seed will be used to seed the random number generator
+  # to ensure repeatibility of the data splits and other
+  # pseudo-random operations
+  random_seed: 42
+data:
+  file_url: "https://raw.githubusercontent.com/udacity/nd0821-c2-build-model-workflow/master/lesson-2-data-exploration-and-preparation/exercises/exercise_4/starter/genres_mod.parquet?token=ABNEVO6ANSAW5NZCIJ5ZXV3AOVMZK"
+  reference_dataset: "exercise_14/preprocessed_data.csv:latest"
+  # Threshold for Kolomorov-Smirnov test
+  ks_alpha: 0.05
+  test_size: 0.3
+  val_size: 0.3
+  # Stratify according to the target when splitting the data
+  # in train/test or in train/val
+  stratify: genre
+random_forest_pipeline:
+  random_forest:
+    n_estimators: 100
+    criterion: 'gini'
+    max_depth: 13
+    min_samples_split: 2
+    min_samples_leaf: 1
+    min_weight_fraction_leaf: 0.0
+    max_features: 'auto'
+    max_leaf_nodes: null
+    min_impurity_decrease: 0.0
+    min_impurity_split: null
+    bootstrap: true
+    oob_score: false
+    n_jobs: null
+    # This is a different random seed than main.random_seed,
+    # because this is used only within the RandomForest
+    random_state: 42
+    verbose: 0
+    warm_start: false
+    class_weight: "balanced"
+    ccp_alpha: 0.0
+    max_samples: null
+  tfidf:
+    max_features: 10
+  features:
+    numerical:
+      - "danceability"
+      - "energy"
+      - "loudness"
+      - "speechiness"
+      - "acousticness"
+      - "instrumentalness"
+      - "liveness"
+      - "valence"
+      - "tempo"
+      - "duration_ms"
+    categorical:
+      - "time_signature"
+      - "key"
+    nlp:
+      - "text_feature"
+  export_artifact: "model_export"

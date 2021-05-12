@@ -1,0 +1,6 @@
+name: exercise_3
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Complete HERE

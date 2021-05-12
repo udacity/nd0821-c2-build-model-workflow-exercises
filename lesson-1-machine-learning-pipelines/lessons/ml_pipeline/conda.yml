@@ -1,0 +1,6 @@
+name: ml_pipeline
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - hydra-core=1.0.6

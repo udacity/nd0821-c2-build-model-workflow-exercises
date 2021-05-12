@@ -1,0 +1,10 @@
+main:
+  project_name: exercise_12
+  experiment_name: dev
+data:
+  train_data: "exercise_6/data_train.csv:latest"
+random_forest_pipeline:
+  random_forest:
+    n_estimators: 100
+    criterion: 'gini'
+    max_depth: null

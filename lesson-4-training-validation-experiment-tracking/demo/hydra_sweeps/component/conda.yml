@@ -1,0 +1,9 @@
+name: hydra_sweep
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - pip=20.3.3
+  - mlflow=1.14.1
+  - pip:
+      - wandb==0.10.21

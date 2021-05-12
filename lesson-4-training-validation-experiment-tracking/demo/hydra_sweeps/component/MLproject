@@ -1,0 +1,14 @@
+name: hydra_sweeps
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+      a:
+        description: First parameter
+        type: float
+      b:
+        description: Second parameter
+        type: float
+    command: >-
+      python noop.py --a {a} --b {b}
