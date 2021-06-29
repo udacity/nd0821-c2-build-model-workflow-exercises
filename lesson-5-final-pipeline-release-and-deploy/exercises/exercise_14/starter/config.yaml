@@ -13,7 +13,7 @@ main:
   # pseudo-random operations
   random_seed: 42
 data:
-  file_url: "https://raw.githubusercontent.com/udacity/nd0821-c2-build-model-workflow/master/lesson-2-data-exploration-and-preparation/exercises/exercise_4/starter/genres_mod.parquet?token=ABNEVO6ANSAW5NZCIJ5ZXV3AOVMZK"
+  file_url: "https://github.com/udacity/nd0821-c2-build-model-workflow-exercises/blob/master/lesson-2-data-exploration-and-preparation/exercises/exercise_4/starter/genres_mod.parquet?raw=true"
   reference_dataset: "exercise_14/preprocessed_data.csv:latest"
   # Threshold for Kolomorov-Smirnov test
   ks_alpha: 0.05
