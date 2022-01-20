@@ -16,7 +16,8 @@ def go(args):
     run = wandb.init(project="exercise_13", job_type="test")
 
     logger.info("Downloading and reading test artifact")
-    test_data_path = ## Get the args.test_data artifact from W&B locally
+    ## Get the args.test_data artifact from W&B locally
+    test_data_path = ## YOUR CODE HERE
     df = pd.read_csv(test_data_path, low_memory=False)
 
     # Extract the target from the features
