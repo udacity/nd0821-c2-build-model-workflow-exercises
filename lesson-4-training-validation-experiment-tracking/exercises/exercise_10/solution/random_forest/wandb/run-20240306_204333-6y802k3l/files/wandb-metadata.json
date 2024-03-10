@@ -1,0 +1,65 @@
+{
+    "os": "Linux-5.15.133.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python": "3.10.13",
+    "heartbeatAt": "2024-03-06T23:43:34.400758",
+    "startedAt": "2024-03-06T23:43:33.676136",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--train_data",
+        "data/data_train.csv",
+        "--model_config",
+        "/home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/outputs/2024-03-06/20-41-54/random_forest_config.json"
+    ],
+    "state": "running",
+    "program": "/home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/run.py",
+    "codePathLocal": "run.py",
+    "codePath": "lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/run.py",
+    "git": {
+        "remote": "https://github.com/ThiagoGrabe/nd0821-c2-build-model-workflow-exercises.git",
+        "commit": "e6a4dea1e995f68080ad8499df2d18357c43e227"
+    },
+    "email": "tmgmeireles@hotmail.com",
+    "root": "/home/grabe/workspace/nd0821-c2-build-model-workflow-exercises",
+    "host": "DESKTOP-MVMERL9",
+    "username": "grabe",
+    "executable": "/home/grabe/miniconda3/envs/mlflow-b71ce8844054e0c802e265ec9d1ee4558a5639cf/bin/python",
+    "cpu_count": 2,
+    "cpu_count_logical": 4,
+    "cpu_freq": {
+        "current": 2591.999,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2591.999,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2591.999,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2591.999,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2591.999,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 1006.853931427002,
+            "used": 12.95379638671875
+        }
+    },
+    "memory": {
+        "total": 7.705867767333984
+    }
+}

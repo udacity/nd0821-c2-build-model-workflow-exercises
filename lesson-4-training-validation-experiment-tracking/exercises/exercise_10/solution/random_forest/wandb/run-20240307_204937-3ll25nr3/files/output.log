@@ -1,0 +1,13 @@
+2024-03-07 20:49:42,293 Downloading and reading train artifact
+2024-03-07 20:49:42,417 Extracting target from dataframe
+2024-03-07 20:49:42,421 Splitting train/val
+2024-03-07 20:49:42,454 Setting up pipeline
+2024-03-07 20:49:42,456 Fitting
+   Unnamed: 0.1  Unnamed: 0  danceability  energy  key  ...  time_signature      genre           song_name                        title                  text_feature
+0         27919       27919         0.529   0.993    0  ...               4     trance                 NaN        UPLIFTING TRANCE 2020        UPLIFTING TRANCE 2020
+1         12771       12771         0.455   0.908    5  ...               4        Emo     Temporary Bliss                          NaN               Temporary Bliss
+2         16748       16748         0.765   0.398    7  ...               4        RnB      Hallucinations                          NaN                Hallucinations
+3         12787       12787         0.367   0.710    3  ...               4        Emo  Everything's Wrong                          NaN            Everything's Wrong
+4         30238       30238         0.577   0.928    8  ...               4  psytrance                 NaN  Psytrance New Releases 2020  Psytrance New Releases 2020
+[5 rows x 20 columns]/n/n
+2024-03-07 20:53:17,530 Scoring

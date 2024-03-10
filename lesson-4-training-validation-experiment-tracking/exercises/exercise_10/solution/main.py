@@ -3,12 +3,18 @@ import json
 import mlflow
 import os
 import hydra
+import wandb
+import omegaconf
 from omegaconf import DictConfig
 
 
 # This automatically reads in the configuration
-@hydra.main(config_name='config')
+@hydra.main(config_path='.', config_name='config')
 def go(config: DictConfig):
+
+    wandb.config = omegaconf.OmegaConf.to_container(
+        config, resolve=True, throw_on_missing=True
+    )
 
     # Setup the wandb experiment. All runs will be grouped under this name
     os.environ["WANDB_PROJECT"] = config["main"]["project_name"]

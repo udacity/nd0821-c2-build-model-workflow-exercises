@@ -1,0 +1,189 @@
+2024-03-07 21:00:09,486 INFO    StreamThr :28113 [internal.py:wandb_internal():86] W&B internal server running at pid: 28113, started at: 2024-03-07 21:00:09.485556
+2024-03-07 21:00:09,490 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: status
+2024-03-07 21:00:09,493 INFO    WriterThread:28113 [datastore.py:open_for_write():87] open: /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/run-nv4psb2d.wandb
+2024-03-07 21:00:09,493 DEBUG   SenderThread:28113 [sender.py:send():378] send: header
+2024-03-07 21:00:09,496 DEBUG   SenderThread:28113 [sender.py:send():378] send: run
+2024-03-07 21:00:10,157 INFO    SenderThread:28113 [dir_watcher.py:__init__():211] watching files in: /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/files
+2024-03-07 21:00:10,157 INFO    SenderThread:28113 [sender.py:_start_run_threads():1099] run started: nv4psb2d with start time 1709856009.485114
+2024-03-07 21:00:10,230 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: check_version
+2024-03-07 21:00:10,231 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: check_version
+2024-03-07 21:00:10,373 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: run_start
+2024-03-07 21:00:10,374 DEBUG   HandlerThread:28113 [system_info.py:__init__():26] System info init
+2024-03-07 21:00:10,374 DEBUG   HandlerThread:28113 [system_info.py:__init__():41] System info init done
+2024-03-07 21:00:10,374 INFO    HandlerThread:28113 [system_monitor.py:start():194] Starting system monitor
+2024-03-07 21:00:10,374 INFO    SystemMonitor:28113 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-03-07 21:00:10,375 INFO    HandlerThread:28113 [system_monitor.py:probe():214] Collecting system info
+2024-03-07 21:00:10,376 INFO    SystemMonitor:28113 [interfaces.py:start():190] Started cpu monitoring
+2024-03-07 21:00:10,377 INFO    SystemMonitor:28113 [interfaces.py:start():190] Started disk monitoring
+2024-03-07 21:00:10,378 INFO    SystemMonitor:28113 [interfaces.py:start():190] Started memory monitoring
+2024-03-07 21:00:10,379 INFO    SystemMonitor:28113 [interfaces.py:start():190] Started network monitoring
+2024-03-07 21:00:10,391 DEBUG   HandlerThread:28113 [system_info.py:probe():150] Probing system
+2024-03-07 21:00:10,411 DEBUG   HandlerThread:28113 [system_info.py:_probe_git():135] Probing git
+2024-03-07 21:00:10,419 DEBUG   HandlerThread:28113 [system_info.py:_probe_git():143] Probing git done
+2024-03-07 21:00:10,419 DEBUG   HandlerThread:28113 [system_info.py:probe():198] Probing system done
+2024-03-07 21:00:10,419 DEBUG   HandlerThread:28113 [system_monitor.py:probe():223] {'os': 'Linux-5.15.146.1-microsoft-standard-WSL2-x86_64-with-glibc2.35', 'python': '3.10.13', 'heartbeatAt': '2024-03-08T00:00:10.392012', 'startedAt': '2024-03-08T00:00:09.477496', 'docker': None, 'cuda': None, 'args': ('--train_data', 'random_forest/data/data_train.csv', '--model_config', '/home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/outputs/2024-03-07/21-00-04/random_forest_config.json'), 'state': 'running', 'program': '/home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/run.py', 'codePathLocal': 'run.py', 'codePath': 'lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/run.py', 'git': {'remote': 'https://github.com/ThiagoGrabe/nd0821-c2-build-model-workflow-exercises.git', 'commit': 'e6a4dea1e995f68080ad8499df2d18357c43e227'}, 'email': 'tmgmeireles@hotmail.com', 'root': '/home/grabe/workspace/nd0821-c2-build-model-workflow-exercises', 'host': 'grabe', 'username': 'grabe', 'executable': '/home/grabe/miniconda3/envs/mlflow-b71ce8844054e0c802e265ec9d1ee4558a5639cf/bin/python', 'cpu_count': 2, 'cpu_count_logical': 4, 'cpu_freq': {'current': 2591.998, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2591.998, 'min': 0.0, 'max': 0.0}, {'current': 2591.998, 'min': 0.0, 'max': 0.0}, {'current': 2591.998, 'min': 0.0, 'max': 0.0}, {'current': 2591.998, 'min': 0.0, 'max': 0.0}], 'disk': {'/': {'total': 1006.853931427002, 'used': 13.200435638427734}}, 'memory': {'total': 7.705955505371094}}
+2024-03-07 21:00:10,419 INFO    HandlerThread:28113 [system_monitor.py:probe():224] Finished collecting system info
+2024-03-07 21:00:10,419 INFO    HandlerThread:28113 [system_monitor.py:probe():227] Publishing system info
+2024-03-07 21:00:10,419 DEBUG   HandlerThread:28113 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2024-03-07 21:00:11,161 INFO    Thread-12 :28113 [dir_watcher.py:_on_file_created():271] file/dir created: /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/files/conda-environment.yaml
+2024-03-07 21:00:13,042 DEBUG   HandlerThread:28113 [system_info.py:_save_conda():219] Saving conda packages done
+2024-03-07 21:00:13,042 INFO    HandlerThread:28113 [system_monitor.py:probe():229] Finished publishing system info
+2024-03-07 21:00:13,044 DEBUG   SenderThread:28113 [sender.py:send():378] send: files
+2024-03-07 21:00:13,045 INFO    SenderThread:28113 [sender.py:_save_file():1365] saving file wandb-metadata.json with policy now
+2024-03-07 21:00:13,123 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: python_packages
+2024-03-07 21:00:13,123 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: python_packages
+2024-03-07 21:00:13,127 DEBUG   SenderThread:28113 [sender.py:send():378] send: telemetry
+2024-03-07 21:00:13,131 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-07 21:00:13,134 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-07 21:00:13,135 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: stop_status
+2024-03-07 21:00:13,158 INFO    Thread-12 :28113 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/files/conda-environment.yaml
+2024-03-07 21:00:13,159 INFO    Thread-12 :28113 [dir_watcher.py:_on_file_created():271] file/dir created: /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/files/requirements.txt
+2024-03-07 21:00:13,159 INFO    Thread-12 :28113 [dir_watcher.py:_on_file_created():271] file/dir created: /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/files/output.log
+2024-03-07 21:00:13,159 INFO    Thread-12 :28113 [dir_watcher.py:_on_file_created():271] file/dir created: /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/files/wandb-metadata.json
+2024-03-07 21:00:13,491 DEBUG   SenderThread:28113 [sender.py:send():378] send: exit
+2024-03-07 21:00:13,492 INFO    SenderThread:28113 [sender.py:send_exit():585] handling exit code: 1
+2024-03-07 21:00:13,492 INFO    SenderThread:28113 [sender.py:send_exit():587] handling runtime: 2
+2024-03-07 21:00:13,494 INFO    SenderThread:28113 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-07 21:00:13,494 INFO    SenderThread:28113 [sender.py:send_exit():593] send defer
+2024-03-07 21:00:13,495 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: defer
+2024-03-07 21:00:13,495 INFO    HandlerThread:28113 [handler.py:handle_request_defer():172] handle defer: 0
+2024-03-07 21:00:13,496 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: defer
+2024-03-07 21:00:13,496 INFO    SenderThread:28113 [sender.py:send_request_defer():609] handle sender defer: 0
+2024-03-07 21:00:13,496 INFO    SenderThread:28113 [sender.py:transition_state():613] send defer: 1
+2024-03-07 21:00:13,496 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: defer
+2024-03-07 21:00:13,496 INFO    HandlerThread:28113 [handler.py:handle_request_defer():172] handle defer: 1
+2024-03-07 21:00:13,497 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: defer
+2024-03-07 21:00:13,498 INFO    SenderThread:28113 [sender.py:send_request_defer():609] handle sender defer: 1
+2024-03-07 21:00:13,498 INFO    SenderThread:28113 [sender.py:transition_state():613] send defer: 2
+2024-03-07 21:00:13,498 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: defer
+2024-03-07 21:00:13,498 INFO    HandlerThread:28113 [handler.py:handle_request_defer():172] handle defer: 2
+2024-03-07 21:00:13,498 INFO    HandlerThread:28113 [system_monitor.py:finish():203] Stopping system monitor
+2024-03-07 21:00:13,499 INFO    HandlerThread:28113 [interfaces.py:finish():202] Joined cpu monitor
+2024-03-07 21:00:13,499 INFO    HandlerThread:28113 [interfaces.py:finish():202] Joined disk monitor
+2024-03-07 21:00:13,499 INFO    HandlerThread:28113 [interfaces.py:finish():202] Joined memory monitor
+2024-03-07 21:00:13,500 INFO    HandlerThread:28113 [interfaces.py:finish():202] Joined network monitor
+2024-03-07 21:00:13,499 DEBUG   SystemMonitor:28113 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-03-07 21:00:13,500 DEBUG   SystemMonitor:28113 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-03-07 21:00:13,500 DEBUG   SystemMonitor:28113 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-03-07 21:00:13,501 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: defer
+2024-03-07 21:00:13,501 INFO    SenderThread:28113 [sender.py:send_request_defer():609] handle sender defer: 2
+2024-03-07 21:00:13,501 INFO    SenderThread:28113 [sender.py:transition_state():613] send defer: 3
+2024-03-07 21:00:13,502 DEBUG   SenderThread:28113 [sender.py:send():378] send: stats
+2024-03-07 21:00:13,502 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: defer
+2024-03-07 21:00:13,502 INFO    HandlerThread:28113 [handler.py:handle_request_defer():172] handle defer: 3
+2024-03-07 21:00:13,503 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: defer
+2024-03-07 21:00:13,503 INFO    SenderThread:28113 [sender.py:send_request_defer():609] handle sender defer: 3
+2024-03-07 21:00:13,503 INFO    SenderThread:28113 [sender.py:transition_state():613] send defer: 4
+2024-03-07 21:00:13,503 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: defer
+2024-03-07 21:00:13,503 INFO    HandlerThread:28113 [handler.py:handle_request_defer():172] handle defer: 4
+2024-03-07 21:00:13,503 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: defer
+2024-03-07 21:00:13,503 INFO    SenderThread:28113 [sender.py:send_request_defer():609] handle sender defer: 4
+2024-03-07 21:00:13,503 INFO    SenderThread:28113 [sender.py:transition_state():613] send defer: 5
+2024-03-07 21:00:13,504 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: defer
+2024-03-07 21:00:13,504 INFO    HandlerThread:28113 [handler.py:handle_request_defer():172] handle defer: 5
+2024-03-07 21:00:13,504 DEBUG   SenderThread:28113 [sender.py:send():378] send: summary
+2024-03-07 21:00:13,505 INFO    SenderThread:28113 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-07 21:00:13,505 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: defer
+2024-03-07 21:00:13,505 INFO    SenderThread:28113 [sender.py:send_request_defer():609] handle sender defer: 5
+2024-03-07 21:00:13,505 INFO    SenderThread:28113 [sender.py:transition_state():613] send defer: 6
+2024-03-07 21:00:13,506 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: defer
+2024-03-07 21:00:13,506 INFO    HandlerThread:28113 [handler.py:handle_request_defer():172] handle defer: 6
+2024-03-07 21:00:13,506 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: defer
+2024-03-07 21:00:13,506 INFO    SenderThread:28113 [sender.py:send_request_defer():609] handle sender defer: 6
+2024-03-07 21:00:13,512 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: status_report
+2024-03-07 21:00:13,704 INFO    SenderThread:28113 [sender.py:transition_state():613] send defer: 7
+2024-03-07 21:00:13,704 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: defer
+2024-03-07 21:00:13,705 INFO    HandlerThread:28113 [handler.py:handle_request_defer():172] handle defer: 7
+2024-03-07 21:00:13,705 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: defer
+2024-03-07 21:00:13,705 INFO    SenderThread:28113 [sender.py:send_request_defer():609] handle sender defer: 7
+2024-03-07 21:00:13,861 INFO    wandb-upload_0:28113 [upload_job.py:push():131] Uploaded file /tmp/tmpw2h2lteawandb/ik3auxxv-wandb-metadata.json
+2024-03-07 21:00:14,145 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-07 21:00:14,159 INFO    Thread-12 :28113 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/files/config.yaml
+2024-03-07 21:00:14,159 INFO    Thread-12 :28113 [dir_watcher.py:_on_file_created():271] file/dir created: /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/files/wandb-summary.json
+2024-03-07 21:00:15,141 INFO    SenderThread:28113 [sender.py:transition_state():613] send defer: 8
+2024-03-07 21:00:15,141 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: poll_exit
+2024-03-07 21:00:15,141 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: defer
+2024-03-07 21:00:15,141 INFO    HandlerThread:28113 [handler.py:handle_request_defer():172] handle defer: 8
+2024-03-07 21:00:15,142 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: defer
+2024-03-07 21:00:15,142 INFO    SenderThread:28113 [sender.py:send_request_defer():609] handle sender defer: 8
+2024-03-07 21:00:15,142 INFO    SenderThread:28113 [job_builder.py:build():298] Attempting to build job artifact
+2024-03-07 21:00:15,143 INFO    SenderThread:28113 [job_builder.py:_get_source_type():428] is repo sourced job
+2024-03-07 21:00:15,146 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-07 21:00:15,159 INFO    Thread-12 :28113 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/files/output.log
+2024-03-07 21:00:15,168 INFO    SenderThread:28113 [job_builder.py:build():404] adding wandb-job metadata file
+2024-03-07 21:00:15,177 INFO    SenderThread:28113 [sender.py:transition_state():613] send defer: 9
+2024-03-07 21:00:15,177 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: poll_exit
+2024-03-07 21:00:15,177 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: defer
+2024-03-07 21:00:15,177 INFO    HandlerThread:28113 [handler.py:handle_request_defer():172] handle defer: 9
+2024-03-07 21:00:15,178 DEBUG   SenderThread:28113 [sender.py:send():378] send: artifact
+2024-03-07 21:00:16,078 INFO    SenderThread:28113 [sender.py:send_artifact():1443] sent artifact job-https___github.com_ThiagoGrabe_nd0821-c2-build-model-workfl..nt-tracking_exercises_exercise_10_solution_random_forest_run.py - {'id': 'QXJ0aWZhY3Q6NzQ0MzkxODY2', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE0NjIwNzk1Mg==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NzQ1OTAxMzMz', 'versionIndex': 6}}}
+2024-03-07 21:00:16,078 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: defer
+2024-03-07 21:00:16,078 INFO    SenderThread:28113 [sender.py:send_request_defer():609] handle sender defer: 9
+2024-03-07 21:00:16,078 INFO    SenderThread:28113 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-03-07 21:00:16,147 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-07 21:00:16,160 INFO    SenderThread:28113 [dir_watcher.py:finish():388] scan: /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/files
+2024-03-07 21:00:16,161 INFO    SenderThread:28113 [dir_watcher.py:finish():402] scan save: /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/files/config.yaml config.yaml
+2024-03-07 21:00:16,161 INFO    SenderThread:28113 [dir_watcher.py:finish():402] scan save: /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/files/wandb-summary.json wandb-summary.json
+2024-03-07 21:00:16,162 INFO    SenderThread:28113 [dir_watcher.py:finish():402] scan save: /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/files/output.log output.log
+2024-03-07 21:00:16,168 INFO    SenderThread:28113 [dir_watcher.py:finish():402] scan save: /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/files/conda-environment.yaml conda-environment.yaml
+2024-03-07 21:00:16,170 INFO    SenderThread:28113 [dir_watcher.py:finish():402] scan save: /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/files/wandb-metadata.json wandb-metadata.json
+2024-03-07 21:00:16,173 INFO    SenderThread:28113 [dir_watcher.py:finish():402] scan save: /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/files/requirements.txt requirements.txt
+2024-03-07 21:00:16,173 INFO    SenderThread:28113 [sender.py:transition_state():613] send defer: 10
+2024-03-07 21:00:16,174 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: poll_exit
+2024-03-07 21:00:16,174 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: defer
+2024-03-07 21:00:16,174 INFO    HandlerThread:28113 [handler.py:handle_request_defer():172] handle defer: 10
+2024-03-07 21:00:16,178 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: defer
+2024-03-07 21:00:16,181 INFO    SenderThread:28113 [sender.py:send_request_defer():609] handle sender defer: 10
+2024-03-07 21:00:16,181 INFO    SenderThread:28113 [file_pusher.py:finish():172] shutting down file pusher
+2024-03-07 21:00:16,605 INFO    wandb-upload_1:28113 [upload_job.py:push():131] Uploaded file /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/files/wandb-summary.json
+2024-03-07 21:00:16,718 INFO    wandb-upload_0:28113 [upload_job.py:push():131] Uploaded file /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/files/config.yaml
+2024-03-07 21:00:16,776 INFO    wandb-upload_2:28113 [upload_job.py:push():131] Uploaded file /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/files/output.log
+2024-03-07 21:00:16,835 INFO    wandb-upload_3:28113 [upload_job.py:push():131] Uploaded file /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/files/conda-environment.yaml
+2024-03-07 21:00:16,859 INFO    wandb-upload_4:28113 [upload_job.py:push():131] Uploaded file /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/files/requirements.txt
+2024-03-07 21:00:17,059 INFO    Thread-11 (_thread_body):28113 [sender.py:transition_state():613] send defer: 11
+2024-03-07 21:00:17,060 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: defer
+2024-03-07 21:00:17,060 INFO    HandlerThread:28113 [handler.py:handle_request_defer():172] handle defer: 11
+2024-03-07 21:00:17,061 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: defer
+2024-03-07 21:00:17,061 INFO    SenderThread:28113 [sender.py:send_request_defer():609] handle sender defer: 11
+2024-03-07 21:00:17,061 INFO    SenderThread:28113 [file_pusher.py:join():178] waiting for file pusher
+2024-03-07 21:00:17,062 INFO    SenderThread:28113 [sender.py:transition_state():613] send defer: 12
+2024-03-07 21:00:17,062 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: defer
+2024-03-07 21:00:17,062 INFO    HandlerThread:28113 [handler.py:handle_request_defer():172] handle defer: 12
+2024-03-07 21:00:17,062 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: defer
+2024-03-07 21:00:17,063 INFO    SenderThread:28113 [sender.py:send_request_defer():609] handle sender defer: 12
+2024-03-07 21:00:17,063 INFO    SenderThread:28113 [file_stream.py:finish():595] file stream finish called
+2024-03-07 21:00:17,149 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-07 21:00:17,235 INFO    SenderThread:28113 [file_stream.py:finish():599] file stream finish is done
+2024-03-07 21:00:17,235 INFO    SenderThread:28113 [sender.py:transition_state():613] send defer: 13
+2024-03-07 21:00:17,235 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: poll_exit
+2024-03-07 21:00:17,236 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: defer
+2024-03-07 21:00:17,236 INFO    HandlerThread:28113 [handler.py:handle_request_defer():172] handle defer: 13
+2024-03-07 21:00:17,237 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: defer
+2024-03-07 21:00:17,237 INFO    SenderThread:28113 [sender.py:send_request_defer():609] handle sender defer: 13
+2024-03-07 21:00:17,237 INFO    SenderThread:28113 [sender.py:transition_state():613] send defer: 14
+2024-03-07 21:00:17,237 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: defer
+2024-03-07 21:00:17,238 INFO    HandlerThread:28113 [handler.py:handle_request_defer():172] handle defer: 14
+2024-03-07 21:00:17,238 DEBUG   SenderThread:28113 [sender.py:send():378] send: final
+2024-03-07 21:00:17,238 DEBUG   SenderThread:28113 [sender.py:send():378] send: footer
+2024-03-07 21:00:17,239 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: defer
+2024-03-07 21:00:17,239 INFO    SenderThread:28113 [sender.py:send_request_defer():609] handle sender defer: 14
+2024-03-07 21:00:17,240 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-07 21:00:17,241 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: poll_exit
+2024-03-07 21:00:17,241 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-07 21:00:17,242 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: poll_exit
+2024-03-07 21:00:17,243 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: server_info
+2024-03-07 21:00:17,243 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: server_info
+2024-03-07 21:00:17,247 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: get_summary
+2024-03-07 21:00:17,248 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: sampled_history
+2024-03-07 21:00:17,249 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-07 21:00:17,249 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: job_info
+2024-03-07 21:00:17,408 DEBUG   SenderThread:28113 [sender.py:send_request():405] send_request: job_info
+2024-03-07 21:00:17,409 INFO    MainThread:28113 [wandb_run.py:_footer_history_summary_info():3851] rendering history
+2024-03-07 21:00:17,410 INFO    MainThread:28113 [wandb_run.py:_footer_history_summary_info():3883] rendering summary
+2024-03-07 21:00:17,410 INFO    MainThread:28113 [wandb_run.py:_footer_sync_info():3810] logging synced files
+2024-03-07 21:00:17,410 DEBUG   HandlerThread:28113 [handler.py:handle_request():146] handle_request: shutdown
+2024-03-07 21:00:17,410 INFO    HandlerThread:28113 [handler.py:finish():869] shutting down handler
+2024-03-07 21:00:18,250 INFO    WriterThread:28113 [datastore.py:close():296] close: /home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/wandb/run-20240307_210009-nv4psb2d/run-nv4psb2d.wandb
+2024-03-07 21:00:18,409 INFO    SenderThread:28113 [sender.py:finish():1521] shutting down sender
+2024-03-07 21:00:18,409 INFO    SenderThread:28113 [file_pusher.py:finish():172] shutting down file pusher
+2024-03-07 21:00:18,410 INFO    SenderThread:28113 [file_pusher.py:join():178] waiting for file pusher

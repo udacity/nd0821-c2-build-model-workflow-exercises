@@ -1,0 +1,19 @@
+random_forest/data/data_train.csv
+/home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/random_forest/data/data_train.csv
+2024-03-07 21:01:15,610 Downloading and reading train artifact
+Traceback (most recent call last):
+  File "/home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/run.py", line 198, in <module>
+    go(args)
+  File "/home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/run.py", line 33, in go
+    df = pd.read_csv(os.path.join(dir_path, args.train_data), low_memory=False)
+  File "/home/grabe/miniconda3/envs/mlflow-b71ce8844054e0c802e265ec9d1ee4558a5639cf/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/grabe/miniconda3/envs/mlflow-b71ce8844054e0c802e265ec9d1ee4558a5639cf/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/grabe/miniconda3/envs/mlflow-b71ce8844054e0c802e265ec9d1ee4558a5639cf/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/home/grabe/miniconda3/envs/mlflow-b71ce8844054e0c802e265ec9d1ee4558a5639cf/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/home/grabe/miniconda3/envs/mlflow-b71ce8844054e0c802e265ec9d1ee4558a5639cf/lib/python3.10/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/random_forest/data/data_train.csv'

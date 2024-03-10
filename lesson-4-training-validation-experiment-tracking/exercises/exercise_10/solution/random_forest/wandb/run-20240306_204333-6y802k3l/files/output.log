@@ -1,0 +1,31 @@
+2024-03-06 20:43:37,229 Downloading and reading train artifact
+[34m[1mwandb[39m[22m: [32m[41mERROR[39m[49m 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/grabe/miniconda3/envs/mlflow-b71ce8844054e0c802e265ec9d1ee4558a5639cf/lib/python3.10/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+  File "/home/grabe/miniconda3/envs/mlflow-b71ce8844054e0c802e265ec9d1ee4558a5639cf/lib/python3.10/site-packages/wandb/apis/public/api.py", line 958, in artifact
+    artifact = wandb.Artifact._from_name(
+  File "/home/grabe/miniconda3/envs/mlflow-b71ce8844054e0c802e265ec9d1ee4558a5639cf/lib/python3.10/site-packages/wandb/sdk/artifacts/artifact.py", line 252, in _from_name
+    attrs = response.get("project", {}).get("artifact")
+AttributeError: 'NoneType' object has no attribute 'get'
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "/home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/run.py", line 195, in <module>
+    go(args)
+  File "/home/grabe/workspace/nd0821-c2-build-model-workflow-exercises/lesson-4-training-validation-experiment-tracking/exercises/exercise_10/solution/random_forest/run.py", line 28, in go
+    train_data_path = run.use_artifact(args.train_data).file()
+  File "/home/grabe/miniconda3/envs/mlflow-b71ce8844054e0c802e265ec9d1ee4558a5639cf/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 371, in wrapper_fn
+    return func(self, *args, **kwargs)
+  File "/home/grabe/miniconda3/envs/mlflow-b71ce8844054e0c802e265ec9d1ee4558a5639cf/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 361, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/grabe/miniconda3/envs/mlflow-b71ce8844054e0c802e265ec9d1ee4558a5639cf/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 2783, in use_artifact
+    artifact = public_api.artifact(type=type, name=name)
+  File "/home/grabe/miniconda3/envs/mlflow-b71ce8844054e0c802e265ec9d1ee4558a5639cf/lib/python3.10/site-packages/wandb/apis/normalize.py", line 87, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/home/grabe/miniconda3/envs/mlflow-b71ce8844054e0c802e265ec9d1ee4558a5639cf/lib/python3.10/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+  File "/home/grabe/miniconda3/envs/mlflow-b71ce8844054e0c802e265ec9d1ee4558a5639cf/lib/python3.10/site-packages/wandb/apis/public/api.py", line 958, in artifact
+    artifact = wandb.Artifact._from_name(
+  File "/home/grabe/miniconda3/envs/mlflow-b71ce8844054e0c802e265ec9d1ee4558a5639cf/lib/python3.10/site-packages/wandb/sdk/artifacts/artifact.py", line 252, in _from_name
+    attrs = response.get("project", {}).get("artifact")
+wandb.errors.CommError: 'NoneType' object has no attribute 'get'

@@ -4,10 +4,10 @@ channels:
   - defaults
 dependencies:
   - pandas=1.2.3
-  - pip=20.3.3
-  - scikit-learn=0.24.1
-  - matplotlib==3.2.2
-  - plotly==4.4.1
-  - pillow=8.1.2
+  - pip=23.3.1
+  - scikit-learn=1.4.1
+  - matplotlib=3.8.3
+  - plotly=5.19.0
+  - pillow=10.2.0
   - pip:
-      - wandb==0.10.21
+      - wandb==0.16.4
