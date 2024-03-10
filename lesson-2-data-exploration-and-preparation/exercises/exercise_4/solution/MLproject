@@ -4,4 +4,4 @@ conda_env: conda.yml
 entry_points:
   main:
     command: >-
-      jupyter notebook
+      jupyter-lab
