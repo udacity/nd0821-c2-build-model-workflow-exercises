@@ -5,14 +5,14 @@ import os
 import hydra
 import wandb
 import omegaconf
-from omegaconf import DictConfig
+from omegaconf import DictConfig, OmegaConf
 
 
 # This automatically reads in the configuration
 @hydra.main(config_path='.', config_name='config')
 def go(config: DictConfig):
 
-    wandb.config = omegaconf.OmegaConf.to_container(
+    wandb.config = OmegaConf.to_container(
         config, resolve=True, throw_on_missing=True
     )
 
