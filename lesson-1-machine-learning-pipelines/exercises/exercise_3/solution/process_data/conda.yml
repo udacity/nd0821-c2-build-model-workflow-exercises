@@ -4,7 +4,7 @@ channels:
   - defaults
 dependencies:
   - python=3.10
-  - requests=2.24.0
+  - requests=2.31.0
   - pip=23.3.1
   - seaborn=0.13.2
   - pandas=2.2.1
