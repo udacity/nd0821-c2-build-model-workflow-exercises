@@ -4,7 +4,6 @@ import mlflow
 import os
 import hydra
 import wandb
-import omegaconf
 from omegaconf import DictConfig, OmegaConf
 
 
@@ -13,7 +12,9 @@ from omegaconf import DictConfig, OmegaConf
 def go(config: DictConfig):
 
     wandb.config = OmegaConf.to_container(
-        config, resolve=True, throw_on_missing=True
+         config, 
+         resolve=True, 
+         throw_on_missing=True
     )
 
     # Setup the wandb experiment. All runs will be grouped under this name
