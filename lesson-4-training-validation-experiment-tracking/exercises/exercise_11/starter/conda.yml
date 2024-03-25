@@ -3,10 +3,13 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - requests=2.24.0
-  - pip=20.3.3
-  - mlflow=1.14.1
-  - hydra-core=1.0.6
+  - python=3.10
+  - requests=2.31.0
+  - pip=23.3.1
+  - mlflow=2.8.1
+  - hydra-core=1.3.2
+  - scikit-learn=1.4.1
+  - pandas=2.2.1
   - pip:
-      - wandb==0.10.21
-      - hydra-joblib-launcher==1.1.2
+      - wandb==0.16.4
+      - hydra-joblib-launcher==1.2.0

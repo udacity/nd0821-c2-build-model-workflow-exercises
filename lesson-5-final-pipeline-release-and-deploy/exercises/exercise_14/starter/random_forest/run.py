@@ -13,7 +13,7 @@ from mlflow.models import infer_signature
 from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics import roc_auc_score, plot_confusion_matrix
+from sklearn.metrics import roc_auc_score, confusion_matrix, ConfusionMatrixDisplay
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OrdinalEncoder, StandardScaler, FunctionTransformer
 import matplotlib.pyplot as plt
@@ -72,15 +72,26 @@ def go(args):
     fig_feat_imp = plot_feature_importance(pipe)
 
     fig_cm, sub_cm = plt.subplots(figsize=(10, 10))
-    plot_confusion_matrix(
-        pipe,
-        X_val[used_columns],
-        y_val,
+    y_pred = pipe.predict(X_val)
+
+    cm = confusion_matrix(
+                y_true=y_val,
+                y_pred=y_pred,
+                labels=pipe["classifier"].classes_,
+                normalize="true"
+            )
+
+    disp  = ConfusionMatrixDisplay(
+                    confusion_matrix=cm,
+                    display_labels=pipe["classifier"].classes_
+                )
+
+    disp.plot(
         ax=sub_cm,
-        normalize="true",
         values_format=".1f",
         xticks_rotation=90,
     )
+
     fig_cm.tight_layout()
 
     run.log(
