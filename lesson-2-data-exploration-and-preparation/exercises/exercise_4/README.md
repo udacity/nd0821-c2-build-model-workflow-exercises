@@ -31,7 +31,7 @@ wandb artifact put \
    
 3. Create a notebook and call it ``EDA``
    
-4. Within the notebook, import the relevant libraries (seaborn, pandas, wandb, pandas profiling), 
+4. Within the notebook, import the relevant libraries (seaborn, pandas, wandb, ydata-profiling), 
    then create a W&B run.
    NOTE: Remember to add the ``save_source=True`` option to ``wandb.init``
    
@@ -45,9 +45,9 @@ wandb artifact put \
    
 6. Generate a profile and note the warnings:
    ```python
-   from pandas_profiling import ProfileReport
+   from ydata_profiling import ProfileReport
    
-   profile = ProfileReport(df, title="Pandas Profiling Report", explorative=True)
+   profile = ProfileReport(df, title="YData Profiling Report", explorative=True)
    profile.to_widgets()
    ```
 

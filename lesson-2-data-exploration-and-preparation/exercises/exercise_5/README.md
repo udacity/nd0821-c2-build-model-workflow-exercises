@@ -35,8 +35,8 @@ Hints:
    - pip:
        - wandb==0.10.21
    ```
-3. You do NOT need to generate the profiles from pandas-profiling (and you also do not need
-   pandas-profiling as a dependency in ``conda.yml``)
+3. You do NOT need to generate the profiles from ydata-profiling (and you also do not need
+   ydata-profiling as a dependency in ``conda.yml``)
 4. Save the cleaned data in a new artifact on W&B called ``preprocessed_data.csv``
 5. We are going to use the created artifact several times in the following exercises. Verify that
    you have an artifact called ``preprocessed_data.csv`` under the project ``exercise_5``, so the
