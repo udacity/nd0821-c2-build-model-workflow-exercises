@@ -33,20 +33,20 @@ def go(args):
     df['song_name'].fillna(value='', inplace=True)
     df['text_feature'] = df['title'] + ' ' + df['song_name']
 
-    filename = "processed_data.csv"
-    df.to_csv(filename)
+    outfile = args.artifact_name
+    df.to_csv(outfile)
 
     artifact = wandb.Artifact(
         name=args.artifact_name,
         type=args.artifact_type,
         description=args.artifact_description,
     )
-    artifact.add_file(filename)
+    artifact.add_file(outfile)
 
     logger.info("Logging artifact")
     run.log_artifact(artifact)
 
-    os.remove(filename)
+    os.remove(outfile)
 
 
 if __name__ == "__main__":
