@@ -6,7 +6,7 @@ dependencies:
   - python=3.10
   - pandas=2.2.1
   - pip=23.3.1
-  - scikit-learn=1.4.1
+  - scikit-learn=1.0.2
   - matplotlib==3.8.3
   - plotly=5.19.0
   - pillow=10.2.0
