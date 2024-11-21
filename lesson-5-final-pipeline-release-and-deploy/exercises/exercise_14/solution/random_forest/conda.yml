@@ -13,5 +13,4 @@ dependencies:
   - mlflow=2.8.1
   - pip:
       - wandb==0.16.4
-      - hydra-joblib-launcher==1.2.0
-      - omegaconf==2.3.0
+      - databricks-cli==0.18.0
