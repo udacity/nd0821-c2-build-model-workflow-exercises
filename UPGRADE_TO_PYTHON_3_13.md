@@ -8,15 +8,15 @@ This document outlines the changes made to upgrade the codebase to Python 3.13.
    - Updated all conda environments from Python 3.10 to Python 3.13
 
 2. Library Version Updates
-   - pandas: 2.2.1 → 3.0.0
-   - scikit-learn: 1.4.1 → 1.5.0
-   - mlflow: 2.8.1 → 3.0.0
-   - numpy: Latest compatible version with pandas 3.0.0
+   - pandas: 2.2.1 → 3.3.2
+   - scikit-learn: 1.4.1 → 1.7.1
+   - mlflow: 2.8.1 → 3.3.2
+   - numpy: Latest compatible version with pandas 2.3.2
 
 3. Code Compatibility Updates
    - Updated NumPy array operations to use concatenate instead of append
    - Updated scikit-learn pipeline configurations for newer versions
-   - Ensured MLflow tracking compatibility with version 3.0.0
+   - Ensured MLflow tracking compatibility with version 2.3.2
    - Updated Hydra configurations for newer versions
 
 ## Compatibility Notes
@@ -55,7 +55,7 @@ All exercises and demos have been tested and verified working with Python 3.13. 
 2. For existing environments, update core packages:
    ```bash
    conda activate your_environment_name
-   conda install python=3.13 pandas=3.0.0 scikit-learn=1.5.0 mlflow=3.0.0
+   conda install python=3.13 pandas=2.3.2 scikit-learn=1.7.1 mlflow=3.3.2
    ```
 
 3. Ensure all dependencies are installed:
