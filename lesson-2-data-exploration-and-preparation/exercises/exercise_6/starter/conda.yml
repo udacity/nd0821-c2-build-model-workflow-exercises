@@ -1,11 +1,11 @@
-name: download_data
+name: ex6
 channels:
   - conda-forge
   - defaults
 dependencies:
   - python=3.13
-  - pandas=3.0.0
-  - pip=24.0
-  - scikit-learn=1.5.0
+  - pandas=2.3.2
+  - pip=24.3.1
+  - scikit-learn=1.7.2
   - pip:
-      - wandb==0.16.4
+      - wandb==0.21.3
