@@ -18,9 +18,6 @@ def test_kolmogorov_smirnov(data, ks_alpha):
         "duration_ms"
     ]
 
-    # Bonferroni correction for multiple hypothesis testing
-    # (see my blog post on this topic to see where this comes from:
-    # https://towardsdatascience.com/precision-and-recall-trade-off-and-multiple-hypothesis-testing-family-wise-error-rate-vs-false-71a85057ca2b)
     alpha_prime = 1 - (1 - ks_alpha)**(1 / len(columns))
 
     for col in columns:
