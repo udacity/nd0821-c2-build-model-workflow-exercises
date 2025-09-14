@@ -3,3 +3,6 @@
 *wandb*
 *pytest*
 *pycache*
+*.idea*
+*/mlruns*
+*/outputs*
