@@ -134,8 +134,8 @@ def plot_feature_importance(pipe):
     # For the NLP feature we sum across all the TF-IDF dimensions into a global
     # NLP importance
     nlp_importance = sum(pipe["classifier"].feature_importances_[len(feat_names) :])
-    feat_imp = np.append(feat_imp, nlp_importance)
-    feat_names = np.append(feat_names, "title + song_name")
+    feat_imp = np.concatenate([feat_imp, [nlp_importance]])
+    feat_names = np.concatenate([feat_names, ["title + song_name"]])
     fig_feat_imp, sub_feat_imp = plt.subplots(figsize=(10, 10))
     idx = np.argsort(feat_imp)[::-1]
     sub_feat_imp.bar(range(feat_imp.shape[0]), feat_imp[idx], color="r", align="center")

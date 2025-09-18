@@ -39,16 +39,13 @@ def test_kolmogorov_smirnov(data):
 
     # Let's decide the Type I error probability (related to the False Positive Rate)
     alpha = 0.05
-    # Bonferroni correction for multiple hypothesis testing
-    # (see my blog post on this topic to see where this comes from:
-    # https://towardsdatascience.com/precision-and-recall-trade-off-and-multiple-hypothesis-testing-family-wise-error-rate-vs-false-71a85057ca2b)
     alpha_prime = 1 - (1 - alpha)**(1 / len(numerical_columns))
 
     for col in numerical_columns:
 
         # Use the 2-sample KS test (scipy.stats.ks_2sample) on the column
         # col
-        ts, p_value = # YOUR CODE HERE
+        ts, p_value = None, None # YOUR CODE HERE
 
         # Add an assertion so that the test fails if p_value > alpha_prime
         # YOUR CODE HERE

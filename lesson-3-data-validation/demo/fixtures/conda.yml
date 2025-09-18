@@ -1,0 +1,10 @@
+name: ex7
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - pandas=2.3.2
+  - pip=24.3.1
+  - pytest=8.4.2
+  - pip:
+      - wandb==0.21.3

@@ -1,10 +1,11 @@
-name: download_data
+name: ex5
 channels:
   - conda-forge
   - defaults
 dependencies:
-  - pandas=2.2.1
-  - pip=23.3.1
-  - pyarrow=14.0.2
+  - pandas=2.3.2
+  - pip=24.3.1
+  - pyarrow=21.0.0
+  - mlflow=3.2.0
   - pip:
-      - wandb==0.16.4
+      - wandb==0.21.3
