@@ -3,9 +3,9 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.13
+  - python=3.12.7
   - pandas=2.3.2
   - requests=2.32.5
   - pip=24.3.1
   - pip:
-      - wandb==0.21.3
+      - wandb==0.22.0

@@ -10,4 +10,4 @@ dependencies:
   - pyarrow=21.0.0
   - ipywidgets=8.1.7
   - pip:
-      - wandb==0.21.3
+      - wandb==0.22.0
