@@ -3,7 +3,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.12.7
+  - python=3.13
   - pip=24.3.1
   - pillow=11.3.0
   - pip:

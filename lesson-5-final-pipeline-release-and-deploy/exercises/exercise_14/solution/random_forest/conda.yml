@@ -3,14 +3,14 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.12.7
+  - python=3.13
   - pandas=2.3.2
   - pip=24.3.1
   - scikit-learn=1.7.2
   - matplotlib=3.10.6
   - plotly=6.3.0
   - pillow=11.3.0
-  - mlflow=2.18.0
+  - mlflow=3.3.2
   - pip:
       - wandb==0.22.0
       - hydra-joblib-launcher==1.2.0
