@@ -11,5 +11,5 @@ dependencies:
   - scikit-learn=1.7.2
   - pandas=2.3.2
   - pip:
-      - wandb==0.22.0
+      - wandb==0.24.0
       - hydra-joblib-launcher==1.2.0

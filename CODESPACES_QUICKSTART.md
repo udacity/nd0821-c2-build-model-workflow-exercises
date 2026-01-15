@@ -12,13 +12,17 @@ Click the "Code" button in GitHub, select "Codespaces", then "Create codespace o
 
 **Important**: All exercises require W&B authentication.
 
-1. Get your API key from [https://wandb.ai/authorize](https://wandb.ai/authorize)
+1. Get your **v1 API key** from [https://wandb.ai/authorize](https://wandb.ai/authorize)
+   - New keys have format: `wandb_v1_...` (86 characters)
+   - Legacy 40-character keys are being phased out
 2. In GitHub, go to **Settings** → **Codespaces** → **Secrets**
 3. Click **New secret**:
    - **Name**: `WANDB_API_KEY`
-   - **Value**: [paste your API key]
+   - **Value**: [paste your full v1 API key]
    - **Repository access**: Select this repository
 4. **Rebuild your Codespace**: Press `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows), type "Rebuild Container", and press Enter
+
+**Note:** This repository uses wandb 0.24.0, which supports the new secure v1 API key format.
 
 ### 3. Verify Setup
 
@@ -27,6 +31,40 @@ After rebuild, check the terminal output. You should see:
 ✓ WANDB_API_KEY found
 ✓ W&B login successful!
 ```
+
+---
+
+## Terminal Setup
+
+### Default Shell
+This Codespace uses **Zsh** as the default shell with Oh My Zsh for enhanced functionality.
+
+### Conda Environment Auto-Activation
+The `ml_workflow_base` conda environment is configured to auto-activate in new terminals.
+
+**Verify your environment:**
+```bash
+# Check active environment (should show * next to ml_workflow_base)
+conda env list
+
+# Verify Python version (should be 3.13.x)
+python --version
+
+# Verify MLflow version (should be 3.3.2)
+mlflow --version
+```
+
+**If auto-activation doesn't work:**
+Manually activate the environment in each new terminal:
+```bash
+conda activate ml_workflow_base
+```
+
+### Environment Details
+- **Name**: `ml_workflow_base`
+- **Python**: 3.13
+- **Key Packages**: MLflow 3.3.2, W&B 0.22.0, pandas 2.3.2, scikit-learn 1.7.2
+- **Location**: `/opt/conda/envs/ml_workflow_base`
 
 ---
 
