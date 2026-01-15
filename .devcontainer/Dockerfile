@@ -26,9 +26,15 @@ COPY --from=conda-builder /opt/conda /opt/conda
 # Configure conda
 ENV PATH="/opt/conda/bin:$PATH"
 RUN /opt/conda/bin/conda init bash && \
-    /opt/conda/bin/conda init zsh && \
-    echo "conda activate ml_workflow_base" >> /etc/bash.bashrc && \
-    echo "conda activate ml_workflow_base" >> /etc/zshrc
+    /opt/conda/bin/conda init zsh
 
+# Configure auto-activation for vscode user (Codespaces)
+RUN echo "conda activate ml_workflow_base" >> /home/vscode/.bashrc && \
+    echo "conda activate ml_workflow_base" >> /home/vscode/.zshrc && \
+    chown vscode:vscode /home/vscode/.bashrc /home/vscode/.zshrc
+
+# Also configure system-wide (fallback)
+RUN echo "conda activate ml_workflow_base" >> /etc/bash.bashrc && \
+    echo "conda activate ml_workflow_base" >> /etc/zshrc
 WORKDIR /workspace
 CMD ["/bin/bash"]
