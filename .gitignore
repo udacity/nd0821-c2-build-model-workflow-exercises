@@ -6,3 +6,22 @@
 *.idea*
 */mlruns*
 */outputs*
+
+# MLflow & Hydra
+mlruns/
+outputs/
+multirun/
+
+# W&B
+wandb/
+artifacts/
+
+# Data
+data/
+
+# Devcontainer
+.devcontainer/.env
+
+# Model outputs
+random_forest_dir/
+model_export/

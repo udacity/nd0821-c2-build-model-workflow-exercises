@@ -1,0 +1,74 @@
+{
+  "name": "ML Workflow Exercises",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "16gb",
+    "storage": "32gb"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "installOhMyZsh": true,
+      "configureZshAsDefaultShell": true
+    },
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  "secrets": {
+    "WANDB_API_KEY": {
+      "description": "Your Weights & Biases API key from https://wandb.ai/authorize"
+    }
+  },
+  "forwardPorts": [5000, 8888, 8889],
+  "portsAttributes": {
+    "5000": {
+      "label": "MLflow UI",
+      "onAutoForward": "notify"
+    },
+    "8888": {
+      "label": "Jupyter Lab",
+      "onAutoForward": "openBrowser"
+    },
+    "8889": {
+      "label": "Jupyter Notebook",
+      "onAutoForward": "silent"
+    }
+  },
+  "onCreateCommand": ".devcontainer/scripts/on-create.sh",
+  "postCreateCommand": ".devcontainer/scripts/post-create.sh",
+  "postStartCommand": ".devcontainer/scripts/post-start.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.black-formatter",
+        "ms-toolsai.jupyter",
+        "redhat.vscode-yaml",
+        "tamasfe.even-better-toml",
+        "GrapeCity.gc-excelviewer",
+        "eamodio.gitlens",
+        "GitHub.copilot"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/opt/conda/bin/python",
+        "python.terminal.activateEnvironment": true,
+        "editor.formatOnSave": true,
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 1000,
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "jupyter.notebookFileRoot": "${workspaceFolder}"
+      }
+    },
+    "codespaces": {
+      "openFiles": [
+        "README.md",
+        "CODESPACES_QUICKSTART.md"
+      ]
+    }
+  },
+  "remoteUser": "vscode"
+}

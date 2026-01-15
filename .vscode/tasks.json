@@ -1,0 +1,42 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Cleanup MLflow Environments",
+      "type": "shell",
+      "command": "bash .devcontainer/scripts/cleanup-mlflow-envs.sh",
+      "problemMatcher": []
+    },
+    {
+      "label": "Create Exercise Environment",
+      "type": "shell",
+      "command": "conda env create -f conda.yml",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run MLflow Project",
+      "type": "shell",
+      "command": "mlflow run .",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run pytest",
+      "type": "shell",
+      "command": "pytest . -v",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Start Jupyter Lab",
+      "type": "shell",
+      "command": "jupyter lab --ip=0.0.0.0 --port=8888 --no-browser",
+      "isBackground": true,
+      "problemMatcher": []
+    }
+  ]
+}

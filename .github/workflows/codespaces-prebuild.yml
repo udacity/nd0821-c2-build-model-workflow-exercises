@@ -1,0 +1,23 @@
+name: Codespaces Prebuild
+
+on:
+  push:
+    branches:
+      - master
+      - main
+      - 'feat/**'
+      - 'feature/**'
+    paths:
+      - '.devcontainer/**'
+      - 'environment.yml'
+      - 'lesson-*/exercises/**/conda.yml'
+  workflow_dispatch:
+
+jobs:
+  prebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Prebuild
+        run: |
+          echo "Prebuild trigger for Codespaces"
+          echo "Configure in: Settings → Codespaces → Prebuilds"
