@@ -49,6 +49,27 @@ if [ -f ~/.zshrc ]; then
         echo "" >> ~/.zshrc
         echo "# Auto-activate ml_workflow_base conda environment" >> ~/.zshrc
         echo "conda activate ml_workflow_base 2>/dev/null || true" >> ~/.zshrc
+        echo "" >> ~/.zshrc
+        echo "# Welcome message (only show for interactive shells)" >> ~/.zshrc
+        echo 'if [[ $- == *i* ]] && [[ -z "$CODESPACE_WELCOME_SHOWN" ]]; then' >> ~/.zshrc
+        echo '  export CODESPACE_WELCOME_SHOWN=1' >> ~/.zshrc
+        echo '  echo ""' >> ~/.zshrc
+        echo '  echo "=========================================="' >> ~/.zshrc
+        echo '  echo "  ML Workflow Exercises - Codespace"' >> ~/.zshrc
+        echo '  echo "=========================================="' >> ~/.zshrc
+        echo '  echo ""' >> ~/.zshrc
+        echo '  echo "Environment: Python $(python --version 2>&1 | cut -d\" \" -f2), MLflow $(mlflow --version 2>&1 | awk '\''{print $NF}'\'')"' >> ~/.zshrc
+        echo '  echo "Disk Space: $(df -h /workspaces 2>/dev/null | tail -1 | awk '\''{print $4}'\'') available"' >> ~/.zshrc
+        echo '  echo ""' >> ~/.zshrc
+        echo '  echo "Quick Start:"' >> ~/.zshrc
+        echo '  echo "  cd lesson-X-*/exercises/exercise_Y/solution"' >> ~/.zshrc
+        echo '  echo "  conda env create -f conda.yml"' >> ~/.zshrc
+        echo '  echo "  conda activate <env_name>"' >> ~/.zshrc
+        echo '  echo "  mlflow run ."' >> ~/.zshrc
+        echo '  echo ""' >> ~/.zshrc
+        echo '  echo "Docs: README.md | CODESPACES_QUICKSTART.md"' >> ~/.zshrc
+        echo '  echo ""' >> ~/.zshrc
+        echo 'fi' >> ~/.zshrc
         echo "✓ Zsh auto-activation configured"
     else
         echo "✓ Zsh auto-activation already configured"
@@ -61,6 +82,27 @@ if [ -f ~/.bashrc ]; then
         echo "" >> ~/.bashrc
         echo "# Auto-activate ml_workflow_base conda environment" >> ~/.bashrc
         echo "conda activate ml_workflow_base 2>/dev/null || true" >> ~/.bashrc
+        echo "" >> ~/.bashrc
+        echo "# Welcome message (only show for interactive shells)" >> ~/.bashrc
+        echo 'if [[ $- == *i* ]] && [[ -z "$CODESPACE_WELCOME_SHOWN" ]]; then' >> ~/.bashrc
+        echo '  export CODESPACE_WELCOME_SHOWN=1' >> ~/.bashrc
+        echo '  echo ""' >> ~/.bashrc
+        echo '  echo "=========================================="' >> ~/.bashrc
+        echo '  echo "  ML Workflow Exercises - Codespace"' >> ~/.bashrc
+        echo '  echo "=========================================="' >> ~/.bashrc
+        echo '  echo ""' >> ~/.bashrc
+        echo '  echo "Environment: Python $(python --version 2>&1 | cut -d\" \" -f2), MLflow $(mlflow --version 2>&1 | awk '\''{print $NF}'\'')"' >> ~/.bashrc
+        echo '  echo "Disk Space: $(df -h /workspaces 2>/dev/null | tail -1 | awk '\''{print $4}'\'') available"' >> ~/.bashrc
+        echo '  echo ""' >> ~/.bashrc
+        echo '  echo "Quick Start:"' >> ~/.bashrc
+        echo '  echo "  cd lesson-X-*/exercises/exercise_Y/solution"' >> ~/.bashrc
+        echo '  echo "  conda env create -f conda.yml"' >> ~/.bashrc
+        echo '  echo "  conda activate <env_name>"' >> ~/.bashrc
+        echo '  echo "  mlflow run ."' >> ~/.bashrc
+        echo '  echo ""' >> ~/.bashrc
+        echo '  echo "Docs: README.md | CODESPACES_QUICKSTART.md"' >> ~/.bashrc
+        echo '  echo ""' >> ~/.bashrc
+        echo 'fi' >> ~/.bashrc
         echo "✓ Bash auto-activation configured"
     else
         echo "✓ Bash auto-activation already configured"

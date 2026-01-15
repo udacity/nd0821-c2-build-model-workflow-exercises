@@ -42,6 +42,24 @@ This Codespace uses **Zsh** as the default shell with Oh My Zsh for enhanced fun
 ### Conda Environment Auto-Activation
 The `ml_workflow_base` conda environment is configured to auto-activate in new terminals.
 
+**What you'll see when opening a new terminal:**
+```
+==========================================
+  ML Workflow Exercises - Codespace
+==========================================
+
+Environment: Python 3.13.x, MLflow 3.3.2
+Disk Space: XXG available
+
+Quick Start:
+  cd lesson-X-*/exercises/exercise_Y/solution
+  conda env create -f conda.yml
+  conda activate <env_name>
+  mlflow run .
+
+Docs: README.md | CODESPACES_QUICKSTART.md
+```
+
 **Verify your environment:**
 ```bash
 # Check active environment (should show * next to ml_workflow_base)
