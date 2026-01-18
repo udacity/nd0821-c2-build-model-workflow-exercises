@@ -2,11 +2,99 @@
 
 Welcome to the ML Workflow Exercises Codespace! This guide will help you get started in 5 minutes.
 
+## Quick Decision Guide
+
+**Choose your path:**
+
+- **First time here?** → Start with "First Time Setup" below
+- **Environment not working?** → Jump to "Common Issues"
+- **Ready to start exercises?** → Go to "Working with Exercises"
+- **Need specific lesson help?** → See "Lesson-Specific Instructions"
+- **Running out of credits?** → Check "Free Tier Limits"
+- **Want to save your work?** → See "Saving Your Work" in Tips & Best Practices
+
+### Your Learning Journey
+
+```mermaid
+flowchart LR
+    A[1. Setup<br/>Create + Configure] --> B[2. Do Exercise<br/>Code + Run + Debug]
+    B --> C{More<br/>exercises?}
+    C -->|Yes| B
+    C -->|No| D[Done! 🎉]
+
+    style A fill:#e1f5e1
+    style B fill:#e3f2fd
+    style D fill:#ffd700
+```
+
+**That's it. Three steps:**
+
+1. **Setup** (once, 10 min): Create codespace → Add W&B key → Rebuild
+2. **Do exercises** (repeat 16 times): Navigate to exercise folder → Run `conda env create -f conda.yml` → Code → Test → Debug
+3. **Done**: Complete all 16 exercises across 5 lessons
+
+**Pro tip**: One codespace is enough for all exercises. Switch branches with `git checkout` when needed.
+
+---
+
 ## First Time Setup
 
 ### 1. Create Your Codespace
 
-Click the "Code" button in GitHub, select "Codespaces", then "Create codespace on master". Your Codespace will start building (takes ~2 minutes first time, ~30 seconds with prebuild).
+#### Choosing Your Branch
+
+Before creating your codespace, you need to choose which branch to work from:
+
+**Recommended Options:**
+
+| Branch | When to Use | Best For |
+|--------|-------------|----------|
+| **`master`** | Starting fresh, following course exercises | Most students - stable, tested infrastructure |
+| **`main`** | If this is the default branch | Alternative to master (some repos use main) |
+| **Feature branch** | Working on specific improvements or experiments | Advanced users testing new features |
+
+**How to Create:**
+
+1. Navigate to the repository on GitHub
+2. **Important**: First select your desired branch using the branch dropdown (top-left, usually shows "master" or "main")
+3. Click the green **"Code"** button
+4. Select the **"Codespaces"** tab
+5. Click **"Create codespace on [branch-name]"**
+   - The button will show the currently selected branch
+   - Double-check this matches your intended branch before clicking
+
+**First-time Setup Time:**
+- With prebuild: ~30-60 seconds
+- Without prebuild: ~2-3 minutes
+- The environment will auto-configure with Python 3.13, conda, MLflow, and W&B
+
+**Pro Tips:**
+
+- **For course exercises**: Use `master` branch - it has all infrastructure fixes and stable dependencies
+- **Switch branches later**: You can change branches inside the codespace without recreating it (saves time and credits)
+- **Multiple exercises**: Create ONE codespace and switch branches as needed rather than multiple codespaces
+
+#### Switching Branches After Creation
+
+You don't need to create a new codespace to work on a different branch. To switch branches in your existing codespace:
+
+**Using VS Code UI:**
+1. Click the branch name in the bottom-left status bar
+2. Select the branch you want from the dropdown
+3. Wait for files to update (a few seconds)
+
+**Using Terminal:**
+```bash
+git fetch origin                    # Get latest branches
+git checkout <branch-name>          # Switch to branch
+git checkout master                 # Back to master
+git checkout -b my-feature-branch   # Create new branch
+```
+
+**When to switch vs. create new:**
+
+- **Switch branches**: Working on different exercises, comparing solutions, testing features
+- **Create new codespace**: Need a completely fresh environment, working on isolated project
 
 ### 2. Add Your Weights & Biases API Key
 
@@ -79,9 +167,10 @@ conda activate ml_workflow_base
 ```
 
 ### Environment Details
+
 - **Name**: `ml_workflow_base`
 - **Python**: 3.13
-- **Key Packages**: MLflow 3.3.2, W&B 0.22.0, pandas 2.3.2, scikit-learn 1.7.2
+- **Key Packages**: MLflow 3.3.2, W&B 0.24.0, pandas 2.3.2, scikit-learn 1.7.2
 - **Location**: `/opt/conda/envs/ml_workflow_base`
 
 ---
@@ -267,11 +356,60 @@ jupyter lab --ip=0.0.0.0 --port=8888 --no-browser
 ```
 
 ### Slow execution / timeouts
+
 **Problem**: Codespace resource constraints
 **Solution**:
+
 - Close unused browser tabs
 - Stop unnecessary processes
-- Consider upgrading to 8-core machine (Settings → Codespaces → Machine type)
+- Check which lesson you're on:
+  - Lessons 1-3: 2-core should be sufficient
+  - Lessons 4-5: Upgrade to 4-core (Codespace menu → "Change machine type")
+  - Hyperparameter sweeps: Consider 8-core temporarily
+- See "Free Tier Limits" section for machine type recommendations
+
+### "Your local changes would be overwritten by checkout"
+
+**Problem**: Trying to switch branches with uncommitted changes
+**Solution**:
+
+```bash
+# Option 1: Save your work (recommended)
+git add .
+git commit -m "Work in progress on exercise X"
+git checkout <target-branch>
+
+# Option 2: Stash changes temporarily
+git stash
+git checkout <target-branch>
+# Later, return and restore:
+git checkout <original-branch>
+git stash pop
+
+# Option 3: Discard changes (use with caution!)
+git checkout -- .
+git checkout <target-branch>
+```
+
+### Wrong branch / Need to start over
+
+**Problem**: Created codespace on wrong branch or environment is corrupted
+**Solution**:
+
+```bash
+# Check current branch
+git branch
+
+# Switch to correct branch
+git checkout master  # or main
+
+# If environment is corrupted, delete and start fresh
+conda remove --name <env_name> --all
+cd lesson-X-.../exercise_Y/solution
+conda env create -f conda.yml
+```
+
+Or simply delete the codespace and create a new one from the correct branch.
 
 ---
 
@@ -302,18 +440,22 @@ When you run `mlflow run .`, the MLflow UI becomes available:
 
 ---
 
-## Free Tier Limits
+## Github Codespaces Limits
 
-GitHub Codespaces free tier includes:
-- **60 core-hours per month** (for 4-core machine = 15 hours)
-- **15 GB storage**
-- **120 GB bandwidth**
+**What you get:**
 
-**Tips to conserve**:
-- **Stop Codespace when done**: Settings (⚙️) → Stop Codespace
-- **Auto-stop timeout**: Set to 30 minutes (Settings → Codespaces → Timeout)
-- **Delete unused Codespaces**: GitHub → Codespaces → Delete old ones
-- **Use smaller machine type** for simple exercises (2-core is often sufficient)
+- **60 core-hours/month** (free accounts)
+- **180 core-hours/month** (with GitHub Student Developer Pack - get this!)
+
+### Essential Habits
+
+**To make your credits last:**
+
+- **Stop when done**: Click Codespace name → "Stop codespace" (don't leave it running)
+- **Auto-stop**: Set timeout to 30 minutes (GitHub Settings → Codespaces)
+- **Delete old codespaces**: Keep only your active one
+- **Use 2-core machine**: Sufficient for *All Lessons**
+- **Switch branches instead of creating multiple codespaces** - this is the biggest credit saver
 
 ---
 
@@ -325,8 +467,54 @@ GitHub Codespaces free tier includes:
 - List all environments: `conda info --envs`
 - Remove specific environment: `conda remove --name <env_name> --all`
 
+### Saving Your Work
+
+**Important**: Changes you make in the codespace are not automatically saved to your GitHub account.
+
+**Recommended workflow for saving your solutions:**
+
+1. **Create your own branch for each lesson or exercise:**
+   ```bash
+   git checkout -b my-lesson-1-solutions
+   # Work on exercises
+   git add .
+   git commit -m "Completed exercise 3"
+   git push origin my-lesson-1-solutions
+   ```
+
+2. **Fork the repository first (recommended for course students):**
+   - Fork the repository to your own GitHub account
+   - Create codespace from YOUR fork
+   - Create branches for each lesson
+   - Push your work to your fork (preserves all your solutions)
+
+3. **Compare your work with solutions:**
+   ```bash
+   # Save your work first
+   git add .
+   git commit -m "My attempt at exercise 9"
+
+   # Switch to see solution
+   git checkout master
+   cd ../solution
+
+   # Switch back to your work
+   git checkout my-lesson-3-solutions
+   cd ../starter
+   ```
+
+**What gets saved vs. lost:**
+
+- ✅ **Saved**: Code you commit and push to a branch
+- ✅ **Saved**: W&B artifacts (stored in cloud)
+- ❌ **Lost**: Uncommitted code changes when codespace is deleted
+- ❌ **Lost**: Local conda environments (need to recreate)
+- ❌ **Lost**: Terminal history and running processes
+
 ### Working with Starter Files
+
 The `starter/` directories contain TODO markers for you to implement:
+
 - Follow exercise README.md for instructions
 - Compare with `solution/` when stuck
 - Both starter and solution use the same `conda.yml`
@@ -353,7 +541,6 @@ VS Code automatically forwards these ports:
 ### Documentation
 - **This file**: Quick start for Codespaces
 - **README.md**: Full repository documentation
-- **CLAUDE.md**: Architecture and patterns
 - **Exercise README.md**: Specific instructions per exercise
 
 ### Common Commands Reference
@@ -383,14 +570,4 @@ wandb status
 bash .devcontainer/scripts/cleanup-mlflow-envs.sh
 ```
 
----
-
-## Next Steps
-
-1. **Complete Lesson 1**: Learn MLflow basics
-2. **Experiment with Lesson 2**: Try EDA with pandas-profiling
-3. **Master Lesson 3**: Understand data validation
-4. **Optimize in Lesson 4**: Run hyperparameter sweeps
-5. **Build Lesson 5**: Create your full ML pipeline
-
-Happy learning! 🚀
+Happy learning!
