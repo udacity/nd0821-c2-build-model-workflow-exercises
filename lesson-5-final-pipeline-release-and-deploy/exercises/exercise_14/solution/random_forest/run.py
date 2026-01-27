@@ -151,10 +151,11 @@ def plot_feature_importance(pipe):
     feat_names = np.append(feat_names, "title + song_name")
     fig_feat_imp, sub_feat_imp = plt.subplots(figsize=(10, 10))
     idx = np.argsort(feat_imp)[::-1]
-    sub_feat_imp.bar(range(feat_imp.shape[0]), feat_imp[idx], color="r", align="center")
-    _ = sub_feat_imp.set_xticks(range(feat_imp.shape[0]))
-    _ = sub_feat_imp.set_xticklabels(feat_names[idx], rotation=90)
-    fig_feat_imp.tight_layout()
+    x = np.arange(feat_imp.shape[0])
+    sub_feat_imp.bar(x, feat_imp[idx], color="tab:red", align="center")
+    sub_feat_imp.set_xticks(x)
+    sub_feat_imp.set_xticklabels(feat_names[idx], rotation=90, ha='right')
+    fig_feat_imp.tight_layout(pad=1.1)
     return fig_feat_imp
 
 
