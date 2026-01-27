@@ -1,0 +1,12 @@
+name: image_classification
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.13
+  - pip=24.3.1
+  - pillow=11.3.0
+  - pip:
+      - wandb==0.21.3
+      - torch==2.8.0
+      - torchvision==0.23.0

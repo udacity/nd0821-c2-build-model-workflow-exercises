@@ -1,11 +1,11 @@
-name: download_data
+name: ex8
 channels:
   - conda-forge
   - defaults
 dependencies:
-  - pandas=2.2.1
-  - pip=23.3.1
-  - pytest=8.0.2
-  - scipy=1.12.0
+  - pandas=2.3.2
+  - pip=24.3.1
+  - pytest=8.4.2
+  - scipy=1.16.1
   - pip:
-      - wandb==0.16.4
+      - wandb==0.21.3
