@@ -10,21 +10,19 @@ logger = logging.getLogger()
 
 
 def go(args):
-
     logger.info("Creating run in project exercise_1")
-    run = wandb.init(project="exercise_1", job_type="use_file")
-
+    
+    # YOUR CODE HERE: Create a W&B run in project "exercise_1" with job_type="use_file"
+    
     logger.info("Getting artifact")
-
-    # YOUR CODE HERE: get the artifact and store its local path in the variable "artifact_path"
-    # HINT: you can get the artifact path by using the "file()" method
-
-    artifact_path = artifact.file()
-
+    
+    # YOUR CODE HERE: Use run.use_artifact to get the artifact specified in args.artifact_name
+    
+    # YOUR CODE HERE: Get the file path from the artifact using the .file() method
+    
     logger.info("Artifact content:")
     with open(artifact_path, "r") as fp:
         content = fp.read()
-
     print(content)
 
 if __name__ == "__main__":
