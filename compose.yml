@@ -3,7 +3,6 @@ services:
     build: 
       context: ./jupyter
       dockerfile: Dockerfile
-    user: root
     container_name: jupyterlab_container
     ports:
       - "8888:8888"
@@ -11,6 +10,9 @@ services:
       - ./:/home/jovyan/work
     environment:
       JUPYTER_ENABLE_LAB: "yes"
+      WANDB_API_KEY: "${WANDB_API_KEY:-}"
+      WANDB_MODE: "${WANDB_MODE:-online}"
+      WANDB_DIR: "/home/jovyan/work/.wandb"
     command: start-notebook.sh --NotebookApp.token=''
     restart: unless-stopped
 
@@ -22,9 +24,5 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./:/mlflow/mlruns
-    # environment:
-    #    MLFLOW_PROJECT_ENV_MANAGER: local
-    #    GIT_PYTHON_REFRESH: quiet
-#      MLFLOW_TRACKING_URI: "http://
-    command: mlflow server --host 0.0.0.0 --port 5000
+      - ./mlruns:/mlflow/mlruns
+    command: mlflow server --host 0.0.0.0 --port 5000 --backend-store-uri sqlite:////mlflow/mlruns/mlflow.db --default-artifact-root /mlflow/mlruns/artifacts

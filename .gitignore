@@ -459,6 +459,13 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,python,venv,pycharm,vim,emacs,visualstudiocode,jupyternotebooks
 
+# W&B local directories
+.wandb/
+wandb/
+
+# MLflow artifacts
+mlruns/
+
 # Lesson 1 - Machine Learning Pipelines artifacts
 
 # Demo
@@ -467,6 +474,7 @@ lesson-1-machine-learning-pipelines/demo/wandb/
 
 # Exercise 1
 lesson-1-machine-learning-pipelines/exercises/exercise_1/solution/wandb/
+lesson-1-machine-learning-pipelines/exercises/exercise_1/solution/artifacts/
 
 # Exercise 2
 lesson-1-machine-learning-pipelines/exercises/exercise_2/solution/mlflow.db
