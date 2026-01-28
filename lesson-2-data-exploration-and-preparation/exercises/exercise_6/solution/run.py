@@ -4,6 +4,7 @@ import logging
 import os
 import tempfile
 
+import numpy as np
 import pandas as pd
 import wandb
 from sklearn.model_selection import train_test_split
@@ -22,6 +23,21 @@ def go(args):
     artifact_path = artifact.file()
 
     df = pd.read_csv(artifact_path, low_memory=False)
+
+    if args.stratify != "null" and args.stratify in df.columns:
+        df = df.dropna(subset=[args.stratify])
+
+    numerical_columns = [
+        "danceability", "energy", "loudness", "speechiness", "acousticness",
+        "instrumentalness", "liveness", "valence", "tempo", "duration_ms"
+    ]
+
+    for col in numerical_columns:
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors="coerce")
+
+    df.replace([np.inf, -np.inf], np.nan, inplace=True)
+    df = df.dropna(subset=[c for c in numerical_columns if c in df.columns])
 
     # Split first in model_dev/test, then we further divide model_dev in train and validation
     logger.info("Splitting data into train, val and test")
@@ -49,7 +65,7 @@ def go(args):
             logger.info(f"Uploading the {split} dataset to {artifact_name}")
 
             # Save then upload to W&B
-            df.to_csv(temp_path)
+            df.to_csv(temp_path, index=False)
 
             artifact = wandb.Artifact(
                 name=artifact_name,
