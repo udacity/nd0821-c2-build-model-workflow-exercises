@@ -5,9 +5,9 @@ channels:
 dependencies:
   - pip=24.3.1
   - pandas=2.3.2
-  - ydata-profiling=4.16.0
+  - ydata-profiling=4.18.1
   - jupyter_core=5.8.1
   - pyarrow=21.0.0
   - ipywidgets=8.1.7
   - pip:
-      - wandb==0.21.3
+      - wandb==0.24.0
