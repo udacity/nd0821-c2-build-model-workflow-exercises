@@ -34,7 +34,7 @@ Hints:
    - pyarrow=21.0.0
    - mlflow=3.2.0
    - pip:
-       - wandb==0.21.3
+       - wandb==0.24.0
    ```
 3. You do NOT need to generate the profiles from ydata-profiling (and you also do not need
    ydata-profiling as a dependency in ``conda.yml``)

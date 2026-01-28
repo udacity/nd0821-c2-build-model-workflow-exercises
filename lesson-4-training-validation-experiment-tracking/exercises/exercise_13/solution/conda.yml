@@ -15,6 +15,6 @@ dependencies:
   - requests=2.32.5
   - pyyaml=6.0.2
   - pip:
-      - wandb==0.21.3
+      - wandb==0.24.0
       - omegaconf==2.3.0
       - hydra-joblib-launcher==1.2.0

@@ -22,7 +22,7 @@ hydra-joblib-launcher==1.2.0
 omegaconf==2.3.0
 
 # Experiment Tracking
-wandb==0.21.3
+wandb==0.24.0
 
 # Data Profiling
 ydata-profiling==4.18.1

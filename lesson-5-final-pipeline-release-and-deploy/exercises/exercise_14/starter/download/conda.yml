@@ -8,4 +8,4 @@ dependencies:
   - requests=2.32.5
   - pip=24.3.1
   - pip:
-      - wandb==0.21.3
+      - wandb==0.24.0
