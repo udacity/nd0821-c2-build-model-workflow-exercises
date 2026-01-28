@@ -10,10 +10,13 @@ services:
       - ./:/home/jovyan/work
     environment:
       JUPYTER_ENABLE_LAB: "yes"
+      # WARNING: Setting JUPYTER_TOKEN to an empty value disables authentication.
+      # Do not use an empty token if this container may be accessible from untrusted networks.
+      JUPYTER_TOKEN: "${JUPYTER_TOKEN:-}"
       WANDB_API_KEY: "${WANDB_API_KEY:-}"
       WANDB_MODE: "${WANDB_MODE:-online}"
       WANDB_DIR: "/home/jovyan/work/.wandb"
-    command: start-notebook.sh --NotebookApp.token=''
+    command: start-notebook.sh --NotebookApp.token='${JUPYTER_TOKEN:-}'
     restart: unless-stopped
 
   mlflow:

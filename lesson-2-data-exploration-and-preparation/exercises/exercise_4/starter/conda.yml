@@ -9,7 +9,7 @@ dependencies:
   - pip=24.3.1
   - ydata-profiling=4.18.1
   - pyarrow=21.0.0
-  - ipywidgets 8.1.7
+  - ipywidgets=8.1.7
   - pip:
       - wandb==0.24.0
 
