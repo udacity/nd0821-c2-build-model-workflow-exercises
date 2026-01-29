@@ -5,7 +5,7 @@ scipy==1.16.1
 
 # Machine Learning
 scikit-learn==1.7.2
-mlflow==3.2.0
+mlflow==3.5.0
 
 # Deep Learning (PyTorch)
 torch==2.8.0
