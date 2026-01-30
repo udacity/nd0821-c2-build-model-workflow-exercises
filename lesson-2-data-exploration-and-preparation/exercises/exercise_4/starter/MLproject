@@ -1,0 +1,6 @@
+name: exercise_4_eda
+conda_env: conda.yml
+
+entry_points:
+  main:
+    command: "jupyter lab EDA.ipynb"

@@ -3,7 +3,7 @@ import scipy.stats
 
 # COMPLETE HERE: make this test accept the fixtures defined in the
 # conftest.py file (data and ks_alpha)
-def test_kolmogorov_smirnov(x, y):  # TODO: update x and y here.
+def test_kolmogorov_smirnov(data, ks_alpha):
 
     sample1, sample2 = data
 

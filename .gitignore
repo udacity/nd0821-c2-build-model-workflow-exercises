@@ -333,157 +333,28 @@ celerybeat.pid
 # Environments
 .env
 .venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+*wandb*
+*pytest*
+*pycache*
+*.idea*
+*/mlruns*
+*/outputs*
 
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
-
-# pytype static type analyzer
-.pytype/
-
-# Cython debug symbols
-cython_debug/
-
-# PyCharm
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
-
-### Python Patch ###
-# Poetry local configuration file - https://python-poetry.org/docs/configuration/#local-configuration
-poetry.toml
-
-# ruff
-.ruff_cache/
-
-# LSP config files
-pyrightconfig.json
-
-### venv ###
-# Virtualenv
-# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
-[Bb]in
-[Ii]nclude
-[Ll]ib
-[Ll]ib64
-[Ll]ocal
-[Ss]cripts
-pyvenv.cfg
-pip-selfcheck.json
-
-### Vim ###
-# Swap
-[._]*.s[a-v][a-z]
-!*.svg  # comment out if you don't need vector files
-[._]*.sw[a-p]
-[._]s[a-rt-v][a-z]
-[._]ss[a-gi-z]
-[._]sw[a-p]
-
-# Session
-Session.vim
-Sessionx.vim
-
-# Temporary
-.netrwhist
-# Auto-generated tag files
-tags
-# Persistent undo
-[._]*.un~
-
-### VisualStudioCode ###
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/*.code-snippets
-
-# Local History for Visual Studio Code
-.history/
-
-# Built Visual Studio Code Extensions
-*.vsix
-
-### VisualStudioCode Patch ###
-# Ignore all local history of files
-.history
-.ionide
-
-### Windows ###
-# Windows thumbnail cache files
-Thumbs.db
-Thumbs.db:encryptable
-ehthumbs.db
-ehthumbs_vista.db
-
-# Dump file
-*.stackdump
-
-# Folder config file
-[Dd]esktop.ini
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msix
-*.msm
-*.msp
-
-# Windows shortcuts
-*.lnk
-
-# End of https://www.toptal.com/developers/gitignore/api/macos,windows,python,venv,pycharm,vim,emacs,visualstudiocode,jupyternotebooks
-
-# W&B local directories
-.wandb/
-wandb/
-
-# MLflow artifacts
+# MLflow & Hydra
 mlruns/
+outputs/
+multirun/
 
-# Lesson 1 - Machine Learning Pipelines artifacts
+# W&B
+wandb/
+artifacts/
 
-# Demo
-lesson-1-machine-learning-pipelines/demo/my_artifact.txt
-lesson-1-machine-learning-pipelines/demo/wandb/
+# Data
+data/
 
-# Exercise 1
-lesson-1-machine-learning-pipelines/exercises/exercise_1/solution/wandb/
-lesson-1-machine-learning-pipelines/exercises/exercise_1/solution/artifacts/
+# Devcontainer
+.devcontainer/.env
 
-# Exercise 2
-lesson-1-machine-learning-pipelines/exercises/exercise_2/solution/mlflow.db
-lesson-1-machine-learning-pipelines/exercises/exercise_2/solution/wandb/
-
-# Exercise 3
-lesson-1-machine-learning-pipelines/exercises/exercise_3/solution/download_data/wandb/
-lesson-1-machine-learning-pipelines/exercises/exercise_3/solution/mlflow.db
-lesson-1-machine-learning-pipelines/exercises/exercise_3/solution/outputs/
-lesson-1-machine-learning-pipelines/exercises/exercise_3/solution/process_data/artifacts/
-lesson-1-machine-learning-pipelines/exercises/exercise_3/solution/process_data/clean_data.csv
-lesson-1-machine-learning-pipelines/exercises/exercise_3/solution/process_data/wandb/
+# Model outputs
+random_forest_dir/
+model_export/

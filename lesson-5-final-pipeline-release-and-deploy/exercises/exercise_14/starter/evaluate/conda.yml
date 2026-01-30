@@ -10,6 +10,6 @@ dependencies:
   - matplotlib==3.10.6
   - plotly=6.3.0
   - pillow=11.3.0
-  - mlflow=3.2.0
+  - mlflow=3.3.2
   - pip:
       - wandb==0.24.0
