@@ -178,7 +178,7 @@ def get_training_inference_pipeline(args):
     nlp_features = sorted(model_config["features"]["nlp"])
     # This trick is needed because SimpleImputer wants a 2d input, but
     # TfidfVectorizer wants a 1d input. So we reshape in between the two steps
-    reshape_to_1d = FunctionTransformer(np.reshape, kw_args={"newshape": -1})
+    reshape_to_1d = FunctionTransformer(lambda x: x.reshape(-1), validate=False)
     nlp_transformer = make_pipeline(
         SimpleImputer(strategy="constant", fill_value=""),
         reshape_to_1d,

@@ -1,4 +1,4 @@
-name: ex3_multi_step_env
+name: exercise_3
 channels:
   - conda-forge
   - defaults

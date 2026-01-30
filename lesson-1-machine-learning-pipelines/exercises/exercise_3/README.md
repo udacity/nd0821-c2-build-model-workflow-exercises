@@ -19,7 +19,7 @@ Your task is to stitch these two components together in a pipeline.
      * hydra-core=1.3.2
    
    as well as the ``pip`` package:
-     * wandb==0.21.3
+     * wandb==0.24.0
 
 2. Complete ``main.py`` by adding the process_data step (instructions in the file)
 

@@ -1,4 +1,4 @@
-name: ex6
+name: exercise_6
 channels:
   - conda-forge
   - defaults

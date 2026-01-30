@@ -1,0 +1,31 @@
+services:
+  jupyter:
+    build: 
+      context: ./jupyter
+      dockerfile: Dockerfile
+    container_name: jupyterlab_container
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./:/home/jovyan/work
+    environment:
+      JUPYTER_ENABLE_LAB: "yes"
+      # WARNING: Setting JUPYTER_TOKEN to an empty value disables authentication.
+      # Do not use an empty token if this container may be accessible from untrusted networks.
+      JUPYTER_TOKEN: "${JUPYTER_TOKEN:-}"
+      WANDB_API_KEY: "${WANDB_API_KEY:-}"
+      WANDB_MODE: "${WANDB_MODE:-online}"
+      WANDB_DIR: "/home/jovyan/work/.wandb"
+    command: start-notebook.sh --NotebookApp.token='${JUPYTER_TOKEN:-}'
+    restart: unless-stopped
+
+  mlflow:
+    build:
+      context: ./mlflow
+      dockerfile: Dockerfile
+    container_name: mlflow_container
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mlruns:/mlflow/mlruns
+    command: mlflow server --host 0.0.0.0 --port 5000 --backend-store-uri sqlite:////mlflow/mlruns/mlflow.db --default-artifact-root /mlflow/mlruns/artifacts
