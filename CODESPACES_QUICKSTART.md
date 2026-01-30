@@ -2,6 +2,61 @@
 
 Welcome to the ML Workflow Exercises Codespace! This guide will help you get started in 5 minutes.
 
+## Table of Contents
+
+- [Quick Decision Guide](#quick-decision-guide)
+  - [Your Learning Journey](#your-learning-journey)
+- [First Time Setup](#first-time-setup)
+  - [1. Create Your Codespace](#1-create-your-codespace)
+    - [Choosing Your Branch](#choosing-your-branch)
+    - [Switching Branches After Creation](#switching-branches-after-creation)
+  - [2. Add Your Weights & Biases API Key](#2-add-your-weights--biases-api-key)
+  - [3. Verify Setup](#3-verify-setup)
+- [Resuming Your Work](#resuming-your-work)
+- [Terminal Setup](#terminal-setup)
+  - [Default Shell](#default-shell)
+  - [Conda Environment Auto-Activation](#conda-environment-auto-activation)
+  - [Environment Details](#environment-details)
+- [Working with Exercises](#working-with-exercises)
+  - [Lesson Structure](#lesson-structure)
+  - [Exercise Workflow](#exercise-workflow)
+    - [Navigate to Exercise](#navigate-to-exercise)
+    - [Create Exercise Environment (First Time Only)](#create-exercise-environment-first-time-only)
+    - [Activate Environment](#activate-environment)
+    - [Run Exercise](#run-exercise)
+- [Lesson-Specific Instructions](#lesson-specific-instructions)
+  - [Lesson 1: Machine Learning Pipelines](#lesson-1-machine-learning-pipelines)
+  - [Lesson 2: Data Exploration and Preparation](#lesson-2-data-exploration-and-preparation)
+  - [Lesson 3: Data Validation](#lesson-3-data-validation)
+  - [Lesson 4: Training & Experiment Tracking](#lesson-4-training--experiment-tracking)
+  - [Lesson 5: Full Pipeline](#lesson-5-full-pipeline)
+- [Common Issues](#common-issues)
+  - ["WANDB_API_KEY not set"](#wandb_api_key-not-set)
+  - ["conda: command not found"](#conda-command-not-found)
+  - ["Disk space full"](#disk-space-full)
+  - ["Environment not found"](#environment-not-found)
+  - ["Port 8888 already in use"](#port-8888-already-in-use)
+  - [Slow execution / timeouts](#slow-execution--timeouts)
+  - ["Your local changes would be overwritten by checkout"](#your-local-changes-would-be-overwritten-by-checkout)
+  - [Wrong branch / Need to start over](#wrong-branch--need-to-start-over)
+- [VS Code Tasks](#vs-code-tasks)
+- [Viewing Results](#viewing-results)
+  - [MLflow UI](#mlflow-ui)
+  - [Weights & Biases](#weights--biases)
+- [GitHub Codespaces Limits](#github-codespaces-limits)
+  - [Essential Habits](#essential-habits)
+- [Tips & Best Practices](#tips--best-practices)
+  - [Environment Management](#environment-management)
+  - [Saving Your Work](#saving-your-work)
+  - [Working with Starter Files](#working-with-starter-files)
+  - [Jupyter Notebooks](#jupyter-notebooks)
+  - [Port Forwarding](#port-forwarding)
+- [Getting Help](#getting-help)
+  - [Documentation](#documentation)
+  - [Common Commands Reference](#common-commands-reference)
+
+---
+
 ## Quick Decision Guide
 
 **Choose your path:**
@@ -119,6 +174,40 @@ After rebuild, check the terminal output. You should see:
 ✓ WANDB_API_KEY found
 ✓ W&B login successful!
 ```
+
+---
+
+## Resuming Your Work
+
+If you've already created a Codespace and need to return to it:
+
+**How to Resume:**
+
+1. Go to the repository on GitHub
+2. Click the green **Code** button
+3. Select the **Codespaces** tab
+4. Click on your existing Codespace name to resume
+
+Your Codespace will restart with:
+- ✓ All your code changes preserved
+- ✓ W&B authentication still configured
+- ✓ Conda environments you created previously
+- ✓ Git branches and commits intact
+
+**Stopping vs Deleting:**
+
+| Action | Effect | When to Use |
+|--------|--------|-------------|
+| **Stop** | Pauses the Codespace, preserves everything, doesn't count toward usage while stopped | End of work session, taking a break |
+| **Delete** | Permanently removes the Codespace and all uncommitted changes | Done with all exercises, need to free up space |
+
+**⚠️ Important**: Always commit and push your work before deleting a Codespace. Uncommitted changes will be lost permanently.
+
+**Quick Tips:**
+- Stopped Codespaces don't consume compute credits
+- Set auto-stop timeout in GitHub Settings → Codespaces (recommended: 30 minutes)
+- You can have multiple Codespaces, but each counts toward your storage quota
+- Resume is instant (~5-10 seconds), much faster than creating new
 
 ---
 
@@ -440,7 +529,7 @@ When you run `mlflow run .`, the MLflow UI becomes available:
 
 ---
 
-## Github Codespaces Limits
+## GitHub Codespaces Limits
 
 **What you get:**
 
@@ -454,7 +543,7 @@ When you run `mlflow run .`, the MLflow UI becomes available:
 - **Stop when done**: Click Codespace name → "Stop codespace" (don't leave it running)
 - **Auto-stop**: Set timeout to 30 minutes (GitHub Settings → Codespaces)
 - **Delete old codespaces**: Keep only your active one
-- **Use 2-core machine**: Sufficient for *All Lessons**
+- **Use 2-core machine**: Sufficient for **All Lessons**
 - **Switch branches instead of creating multiple codespaces** - this is the biggest credit saver
 
 ---
@@ -556,7 +645,7 @@ conda remove --name <env_name> --all
 
 # Run exercises
 mlflow run .
-mlflow run . -P steps=download
+mlflow run . -P hydra_options="main.execute_steps='download'"
 mlflow run . -P hydra_options="param=value"
 pytest . -v
 jupyter lab --ip=0.0.0.0 --port=8888 --no-browser

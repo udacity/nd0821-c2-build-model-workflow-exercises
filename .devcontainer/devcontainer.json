@@ -5,8 +5,8 @@
     "context": ".."
   },
   "hostRequirements": {
-    "cpus": 4,
-    "memory": "16gb",
+    "cpus": 2,
+    "memory": "8gb",
     "storage": "32gb"
   },
   "features": {
@@ -54,7 +54,7 @@
         "GitHub.copilot"
       ],
       "settings": {
-        "python.defaultInterpreterPath": "/opt/conda/bin/python",
+        "python.defaultInterpreterPath": "/opt/conda/envs/ml_workflow_base/bin/python",
         "python.terminal.activateEnvironment": true,
         "editor.formatOnSave": true,
         "files.autoSave": "afterDelay",

@@ -11,6 +11,9 @@
       "label": "Create Exercise Environment",
       "type": "shell",
       "command": "conda env create -f conda.yml",
+      "options": {
+        "cwd": "${fileDirname}"
+      },
       "group": "build",
       "problemMatcher": []
     },
@@ -18,6 +21,9 @@
       "label": "Run MLflow Project",
       "type": "shell",
       "command": "mlflow run .",
+      "options": {
+        "cwd": "${fileDirname}"
+      },
       "group": {
         "kind": "build",
         "isDefault": true
@@ -28,6 +34,9 @@
       "label": "Run pytest",
       "type": "shell",
       "command": "pytest . -v",
+      "options": {
+        "cwd": "${fileDirname}"
+      },
       "group": "test",
       "problemMatcher": []
     },

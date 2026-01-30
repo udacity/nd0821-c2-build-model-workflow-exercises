@@ -34,8 +34,13 @@ else
     else
         echo "⚠️  Legacy API key detected. Consider upgrading to v1 format."
     fi
-    wandb login --relogin <<< "$WANDB_API_KEY"
-    echo "✓ W&B login successful!"
+    # Handle login failures gracefully (network issues, invalid key, W&B outage)
+    if echo "$WANDB_API_KEY" | wandb login --relogin; then
+        echo "✓ W&B login successful!"
+    else
+        echo "⚠️  W&B login failed. You can retry later with: wandb login"
+        echo "   Get your API key from: https://wandb.ai/authorize"
+    fi
 fi
 
 # Configure persistent conda auto-activation (runs AFTER Oh My Zsh setup)
@@ -46,6 +51,11 @@ echo "🔧 Configuring shell auto-activation..."
 if [ -f ~/.zshrc ]; then
     # Check if already configured (avoid duplicates on rebuilds)
     if ! grep -q "conda activate ml_workflow_base" ~/.zshrc; then
+        echo "" >> ~/.zshrc
+        echo "# Initialize conda for this shell (needed if conda is not already initialized)" >> ~/.zshrc
+        echo 'if [ -f "/opt/conda/etc/profile.d/conda.sh" ]; then' >> ~/.zshrc
+        echo '  . "/opt/conda/etc/profile.d/conda.sh"' >> ~/.zshrc
+        echo 'fi' >> ~/.zshrc
         echo "" >> ~/.zshrc
         echo "# Auto-activate ml_workflow_base conda environment" >> ~/.zshrc
         echo "conda activate ml_workflow_base 2>/dev/null || true" >> ~/.zshrc
@@ -79,6 +89,11 @@ fi
 # Configure for bash (fallback)
 if [ -f ~/.bashrc ]; then
     if ! grep -q "conda activate ml_workflow_base" ~/.bashrc; then
+        echo "" >> ~/.bashrc
+        echo "# Initialize conda for this shell (needed if conda is not already initialized)" >> ~/.bashrc
+        echo 'if [ -f "/opt/conda/etc/profile.d/conda.sh" ]; then' >> ~/.bashrc
+        echo '  . "/opt/conda/etc/profile.d/conda.sh"' >> ~/.bashrc
+        echo 'fi' >> ~/.bashrc
         echo "" >> ~/.bashrc
         echo "# Auto-activate ml_workflow_base conda environment" >> ~/.bashrc
         echo "conda activate ml_workflow_base 2>/dev/null || true" >> ~/.bashrc

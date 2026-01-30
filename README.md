@@ -1,6 +1,6 @@
 # Build a Reproducible Model Workflow - Exercises
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/udacity/nd0821-c2-build-model-workflow-exercises)
 
 ## Quick Start with GitHub Codespaces
 
