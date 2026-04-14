@@ -34,7 +34,7 @@ requests==2.32.5
 pillow==11.3.0
 
 # Testing
-pytest==8.4.2
+pytest==9.0.3
 
 # Jupyter & Notebooks
 jupyter==1.1.1
