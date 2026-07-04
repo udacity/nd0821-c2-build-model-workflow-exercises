@@ -1,0 +1,8 @@
+name: exercise_4
+conda_env: conda.yml
+
+entry_points:
+  main:
+    command: >-
+      jupyter-lab --allow-root
+      

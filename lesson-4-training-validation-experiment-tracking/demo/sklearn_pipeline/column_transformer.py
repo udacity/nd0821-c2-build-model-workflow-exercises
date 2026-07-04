@@ -32,3 +32,4 @@ preproc = ColumnTransformer(
 )
 pipe = make_pipeline(preproc, LogisticRegression())
 pipe.fit(X, y)
+print(pipe.predict(X))

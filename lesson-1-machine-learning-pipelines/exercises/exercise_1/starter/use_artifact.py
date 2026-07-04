@@ -13,15 +13,17 @@ def go(args):
     logger.info("Creating run in project exercise_1")
     
     # YOUR CODE HERE: Create a W&B run in project "exercise_1" with job_type="use_file"
-    
+    run = wandb.init(project="exercise_1", job_type="use_file")
     logger.info("Getting artifact")
     
     # YOUR CODE HERE: Use run.use_artifact to get the artifact specified in args.artifact_name
-    
+    artifact = run.use_artifact(args.artifact_name)
     # YOUR CODE HERE: Get the file path from the artifact using the .file() method
     
     logger.info("Artifact content:")
-    with open(artifact_path, "r") as fp:
+    filepath = artifact.file()
+
+    with open(filepath, "r") as fp:
         content = fp.read()
     print(content)
 

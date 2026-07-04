@@ -47,7 +47,12 @@ def go(args):
     # COMPLETE the following line     #
     ###################################
 
-    splits["train"], splits["test"] = # USE train_test_split here to split df according to the provided args.test_size
+    splits["train"], splits["test"] = train_test_split(
+        df,
+        test_size=args.test_size,
+        random_state=args.random_state,
+        stratify=df[args.stratify] if args.stratify != 'null' else None,
+    )# USE train_test_split here to split df according to the provided args.test_size
 
     # Now we save the artifacts. We use a temporary directory so we do not leave
     # any trace behind

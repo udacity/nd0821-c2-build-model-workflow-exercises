@@ -1,0 +1,38 @@
+random_forest:
+  n_estimators: 10
+  criterion: gini
+  max_depth: null
+  min_samples_split: 2
+  min_samples_leaf: 1
+  min_weight_fraction_leaf: 0.0
+  max_features: null
+  max_leaf_nodes: null
+  min_impurity_decrease: 0.0
+  bootstrap: true
+  oob_score: false
+  n_jobs: null
+  random_state: null
+  verbose: 0
+  warm_start: false
+  class_weight: null
+  ccp_alpha: 0.0
+  max_samples: null
+tfidf:
+  max_features: 100
+features:
+  numerical:
+  - danceability
+  - energy
+  - loudness
+  - speechiness
+  - acousticness
+  - instrumentalness
+  - liveness
+  - valence
+  - tempo
+  - duration_ms
+  categorical:
+  - time_signature
+  - key
+  nlp:
+  - text_feature

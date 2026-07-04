@@ -141,8 +141,12 @@ def get_inference_pipeline(args):
     ])
 
     ############# YOUR CODE HERE
-    numeric_transformer = # USE make_pipeline to create a pipeline containing a SimpleImputer using strategy=median
-                          # and a StandardScaler (you can use the default options for the latter)
+    numeric_transformer = make_pipeline(
+        SimpleImputer(strategy="median"), StandardScaler()
+    )
+    
+    # USE make_pipeline to create a pipeline containing a SimpleImputer using strategy=median
+    # and a StandardScaler (you can use the default options for the latter)
 
     # Textual ("nlp") preprocessing pipeline
     nlp_features = ["text_feature"]
@@ -151,7 +155,12 @@ def get_inference_pipeline(args):
     reshape_to_1d = FunctionTransformer(lambda x: x.reshape(-1), validate=False)
 
     ############# YOUR CODE HERE
-    nlp_transformer = # USE make_pipeline to create a pipeline containing a SimpleImputer with strategy=constant and
+    nlp_transformer = make_pipeline(
+        SimpleImputer(strategy="constant", fill_value=""),
+        reshape_to_1d,
+        TfidfVectorizer(binary=True),
+    )
+    # USE make_pipeline to create a pipeline containing a SimpleImputer with strategy=constant and
                       # fill_value="" (the empty string), followed by our custom reshape_to_1d instance, and finally
                       # insert a TfidfVectorizer with the options binary=True
 
@@ -160,7 +169,7 @@ def get_inference_pipeline(args):
     preprocessor = ColumnTransformer(
         transformers=[
             ("num", numeric_transformer, numeric_features),
-            ("cat", # COMPLETE HERE using the categorical transformer and the categorical_features,
+            ("cat", categorical_transformer, categorical_features), # COMPLETE HERE using the categorical transformer and the categorical_features,
             ("nlp1", nlp_transformer, nlp_features),
         ],
         remainder="drop",  # This drops the columns that we do not transform (i.e., we don't use)
@@ -176,7 +185,14 @@ def get_inference_pipeline(args):
     ############# YOUR CODE HERE
     # Append classifier to preprocessing pipeline.
     # Now we have a full prediction pipeline.
-    pipe = # CREATE a Pipeline instances with 2 steps: one step called "preprocessor" using the
+    pipe = Pipeline(
+        steps=[
+            ("preprocessor", preprocessor),
+            ("classifier", RandomForestClassifier(**model_config))
+        ]
+    )
+    
+    # CREATE a Pipeline instances with 2 steps: one step called "preprocessor" using the
            # preprocessor instance, and another one called "classifier" using RandomForestClassifier(**model_config)
            # (i.e., a Random Forest with the configuration we have received as input)
            # NOTE: here you should create the Pipeline object directly, and not make_pipeline
