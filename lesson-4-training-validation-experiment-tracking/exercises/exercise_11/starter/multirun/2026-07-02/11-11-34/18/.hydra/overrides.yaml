@@ -1,0 +1,2 @@
+- random_forest_pipeline.random_forest.max_depth=28
+- random_forest_pipeline.tfidf.max_features=50

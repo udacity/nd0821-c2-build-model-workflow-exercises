@@ -120,6 +120,23 @@ def export_model(run, pipe, X_val, val_pred, export_artifact):
 
         # Make sure the artifact is uploaded before the temp dir
         # gets deleted
+        mlflow.sklearn.save_model(
+            pipe,
+            export_path,
+            serialization_format=mlflow.sklearn.SERIALIZATION_FORMAT_CLOUDPICKLE,
+            signature=signature,
+            input_example=X_val.iloc[:2],
+        )
+
+        artifact = wandb.Artifact(
+            export_artifact,
+            type="model_export",
+            description="Random forest model export",
+        )
+
+        artifact.add_dir(export_path)
+
+        run.log_artifact(artifact)
         artifact.wait()
 
 

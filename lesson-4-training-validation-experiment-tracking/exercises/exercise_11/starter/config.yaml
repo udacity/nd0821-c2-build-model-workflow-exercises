@@ -5,7 +5,7 @@ data:
   train_data: "exercise_6/data_train.csv:latest"
 random_forest_pipeline:
   random_forest:
-    n_estimators: 100
+    n_estimators: 10
     criterion: 'gini'
     max_depth: null
     min_samples_split: 2
