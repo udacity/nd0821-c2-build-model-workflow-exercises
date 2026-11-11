@@ -16,9 +16,9 @@ python download_data.py \
 
 ## Steps
 1. Create a ``conda.yml`` file declaring the dependencies of the script. The script needs
-   the ``requests`` library at version ``2.24.0`` (``requests=2.24.0``) installed with conda, 
-   as well as the W&B client ``wandb`` at version ``0.10.21`` *installed with pip* (you can use
-   pip at version ``20.3.3``)
+   the ``requests`` library at version ``2.32.5`` (``requests=2.32.5``) installed with conda, 
+   as well as the W&B client ``wandb`` at version ``0.24.0`` *installed with pip* (you can use
+   pip at version ``24.3.1``)
    
 2. Create the ``MLproject`` file declaring the ``download_data.py`` script as ``main``, and fill
    up all the relevant sections, so the script can be run through mlflow. Remember to declare the
